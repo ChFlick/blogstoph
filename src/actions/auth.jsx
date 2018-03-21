@@ -7,9 +7,13 @@ export const login = (uid) => {
     };
 };
 
-export const startLogin = () => {
+export const startLogin = (authProviderName) => {
     return () => {
-        return firebase.auth().signInWithPopup(googleAuthProvider);
+        if (authProviderName === 'google'){
+            return firebase.auth().signInWithPopup(googleAuthProvider);
+        } else {
+            throw new Error('authentication provider not available');
+        }
     };
 };
 
