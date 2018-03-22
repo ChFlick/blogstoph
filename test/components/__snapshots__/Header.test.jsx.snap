@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render Header correctly 1`] = `
+exports[`should render Header correctly when logged in 1`] = `
 <header
   className="header"
 >
@@ -16,15 +16,55 @@ exports[`should render Header correctly 1`] = `
         to="/dashboard"
       >
         <h1>
-          Boilerplate
+          Blogstoph
         </h1>
       </Link>
-      <button
-        className="button button--link"
-        onClick={[Function]}
+      <div>
+        <Link
+          className="button button--link"
+          replace={false}
+          to="/editor/dashboard"
+        >
+          Editor Area
+        </Link>
+        <button
+          className="button button--link"
+          onClick={[Function]}
+        >
+          Logout
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+`;
+
+exports[`should render Header correctly when logged out 1`] = `
+<header
+  className="header"
+>
+  <div
+    className="content-container"
+  >
+    <div
+      className="header__content"
+    >
+      <Link
+        className="header__title"
+        replace={false}
+        to="/dashboard"
       >
-        Logout
-      </button>
+        <h1>
+          Blogstoph
+        </h1>
+      </Link>
+      <Link
+        className="button button--link"
+        replace={false}
+        to="/login"
+      >
+        Login
+      </Link>
     </div>
   </div>
 </header>

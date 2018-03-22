@@ -5,21 +5,34 @@ import { connect } from 'react-redux';
 import { startLogout } from '../actions/auth';
 
 
-export const Header = ({ startLogout }) => (
-    <header className="header">
-        <div className="content-container">
-            <div className="header__content">
-                <Link className="header__title" to="/dashboard">
-                    <h1>Boilerplate</h1>
-                </Link>
-                <button className="button button--link" onClick={startLogout}>Logout</button>
+export const Header = ({ isAuthenticated, startLogout }) => {
+    return (
+        <header className="header">
+            <div className="content-container">
+                <div className="header__content">
+                    <Link className="header__title" to="/dashboard">
+                        <h1>Blogstoph</h1>
+                    </Link>
+                    {isAuthenticated ? (
+                        <div>
+                            <Link className="button button--link" to="/editor/dashboard">Editor Area</Link>
+                            <button className="button button--link" onClick={startLogout}>Logout</button>
+                        </div>
+                    ) : (
+                        <Link className="button button--link" to="/login">Login</Link>
+                    )}
+                </div>
             </div>
-        </div>
-    </header>
-);
+        </header>
+    );
+};
 
-const mapDispatchToProps = (dispatch) => ({
-    startLogout: () => dispatch(startLogout())
+const mapStateToProps = (state) => ({
+    isAuthenticated: !!state.uid
 });
 
-export default connect(undefined, mapDispatchToProps)(Header);
+const mapDispatchToProps = (dispatch) => ({
+    startLogout: () => dispatch(startLogout()),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

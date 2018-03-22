@@ -34,12 +34,14 @@ firebase.auth().onAuthStateChanged((user) => {
     if (user) {
         store.dispatch(login(user.uid));
         renderApp();
-        if (history.location.pathname === '/'){
-            history.push('/dashboard');
+        if (history.location.pathname === '/login'){
+            history.push('/editor/dashboard');
         }
     } else {
         store.dispatch(logout());
         renderApp();
-        history.push('/');
+        if (history.location.pathname.includes('editor')){
+            history.push('/');
+        }
     }
 });

@@ -10,10 +10,10 @@ exports[`should render login page correctly 1`] = `
     <h1
       className="box-layout__title"
     >
-      Boilerplate
+      Blogstoph Login
     </h1>
     <p>
-      Tag line for app.
+      Log in to edit your posts.
     </p>
     <button
       className="button"
