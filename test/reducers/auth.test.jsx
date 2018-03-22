@@ -24,3 +24,18 @@ test('should logout', () => {
 
     expect(newState).toEqual({});
 });
+
+test('should return state by default', () => {
+    const state = {
+        uid: 'someuid'
+    };
+
+    const action = {
+        type: 'UNDEFINED'
+    };
+
+    const newState = authReducer(state, action);
+
+    expect(newState).toEqual(state);
+});
+

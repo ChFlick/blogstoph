@@ -56,3 +56,13 @@ test('SET_POSTS should set all posts', () => {
 
     expect(newState).toEqual(posts);
 });
+
+test('should return state by default', () => {
+    const action = {
+        type: 'UNDEFINED'
+    };
+
+    const newState = postsReducer(publishedPosts, action);
+
+    expect(newState).toEqual(publishedPosts);
+});

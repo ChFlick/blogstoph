@@ -1,15 +1,18 @@
 import * as firebase from '../../src/firebase/firebase';
 
-import { startLogin, login, logout } from '../../src/actions/auth';
+import { startLogin, login, startLogout, logout } from '../../src/actions/auth';
 
 let signIn;
+let signOut;
 
 beforeEach(() => {
     signIn = jest.fn();
+    signOut = jest.fn();
 
     firebase.firebase = {
         auth: () => ({
-            signInWithPopup: signIn
+            signInWithPopup: signIn,
+            signOut
         })
     };
     firebase.googleAuthProvider = 'googleAuth';
@@ -40,4 +43,9 @@ test('should generate logout action object', () => {
     expect(action).toEqual({
         type: 'LOGOUT',
     });
+});
+
+test('startLogout should sign out with firebase', () => {
+    startLogout()();
+    expect(signOut).toHaveBeenCalled();
 });
