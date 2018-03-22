@@ -4,7 +4,6 @@ env:
 language: node_js
 node_js:
   - "node"
-  - "9.8.0"
 cache: yarn
 before_script:
   - yarn add codeclimate-test-reporter
