@@ -1,12 +1,10 @@
-env:
-  global:
-    - CC_TEST_REPORTER_ID=49dd4a271d055fb567d50b3482f1adcd33598e59ce18ff78e84312bb08bb6270
 language: node_js
 node_js:
   - "node"
 cache: yarn
 install:
-  - npm install -g codecov
+  - yarn install
+  - yarn global add codecov
 after_success:
   - yarn run coverage
   - codecov
