@@ -1,8 +1,16 @@
+env:
+  global:
+    - CC_TEST_REPORTER_ID=49dd4a271d055fb567d50b3482f1adcd33598e59ce18ff78e84312bb08bb6270
 language: node_js
 node_js:
   - "node"
   - "9.8.0"
 cache: yarn
+before_script:
+  - yarn add codeclimate-test-reporter
+after_success:
+  - yarn run coverage
+  - codeclimate < ./coverage/lcov.info
 deploy:
   provider: heroku
   api_key:
