@@ -7,8 +7,8 @@ node_js:
 cache: yarn
 install:
   - npm install -g codecov
-script:
-  - yarn run cover
+after_success:
+  - yarn run coverage
   - codecov
 deploy:
   provider: heroku
