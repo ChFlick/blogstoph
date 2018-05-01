@@ -3,5 +3,11 @@
 exports[`should render the dashboard page correctly 1`] = `
 <div>
   Editor Dasboard page content
+  <Link
+    replace={false}
+    to="./addPost"
+  >
+    Add Post
+  </Link>
 </div>
 `;

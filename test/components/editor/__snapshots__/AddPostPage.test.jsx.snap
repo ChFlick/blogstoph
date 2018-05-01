@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render the add post page correctly 1`] = `
+<div>
+  <h1>
+    Add Post
+  </h1>
+  <PostForm />
+</div>
+`;

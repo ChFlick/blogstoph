@@ -10,7 +10,9 @@ import 'react-dates/initialize';
 import { firebase } from './firebase/firebase';
 import LoadingPage from './components/LoadingPage';
 import { login, logout } from './actions/auth';
+import moment from 'moment';
 
+moment.locale('de');
 
 const store = configureStore();
 
