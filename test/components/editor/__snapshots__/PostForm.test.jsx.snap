@@ -108,6 +108,14 @@ exports[`renders the post form correctly 1`] = `
     withPortal={false}
   />
   <div>
+    Public:
+    <input
+      onChange={[Function]}
+      type="checkbox"
+      value={false}
+    />
+  </div>
+  <div>
     <button>
       Save Post
     </button>

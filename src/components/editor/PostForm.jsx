@@ -8,6 +8,7 @@ class PostForm extends React.Component {
         author: '',
         date: undefined,
         dateFocused: false,
+        isPublic: false
     };
 
     onSubmit = (e) => {
@@ -15,25 +16,35 @@ class PostForm extends React.Component {
     };
 
     onTitleChange = (e) => {
-        this.setState({
-            title: e.target.value
-        });
+        const title = e .target.value;
+        this.setState(() => ({
+            title
+        }));
     };
 
     onTextChange = (e) => {
-        this.setState({
-            text: e.target.value
-        });
+        const text = e .target.value;
+        this.setState(() => ({
+            text
+        }));
     };
 
     onAuthorChange = (e) => {
-        this.setState({
-            author: e.target.value
-        });
+        const author = e .target.value;
+        this.setState(() => ({
+            author
+        }));
     };
 
     onDateChange = (date) => {
-       this.setState({ date });
+        this.setState(() => ({ date }));
+    };
+
+    onIsPublicChange = (e) => {
+        const isPublic = e .target.value === 'true'
+        this.setState(() => ({
+            isPublic
+        }));
     };
 
     render() {
@@ -65,6 +76,14 @@ class PostForm extends React.Component {
                     numberOfMonths={1}
                     displayFormat="DD.MM.YYYY"
                 />
+                <div>
+                    Public:
+                <input
+                        type="checkbox"
+                        onChange={this.onIsPublicChange}
+                        value={this.state.isPublic}
+                    />
+                </div>
                 <div>
                     <button>Save Post</button>
                 </div>
