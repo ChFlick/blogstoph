@@ -16,21 +16,21 @@ class PostForm extends React.Component {
     };
 
     onTitleChange = (e) => {
-        const title = e .target.value;
+        const title = e.target.value;
         this.setState(() => ({
             title
         }));
     };
 
     onTextChange = (e) => {
-        const text = e .target.value;
+        const text = e.target.value;
         this.setState(() => ({
             text
         }));
     };
 
     onAuthorChange = (e) => {
-        const author = e .target.value;
+        const author = e.target.value;
         this.setState(() => ({
             author
         }));
@@ -41,7 +41,7 @@ class PostForm extends React.Component {
     };
 
     onIsPublicChange = (e) => {
-        const isPublic = e .target.value === 'true'
+        const isPublic = e.target.value === 'true'
         this.setState(() => ({
             isPublic
         }));
