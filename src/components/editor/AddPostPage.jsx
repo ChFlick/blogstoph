@@ -1,12 +1,20 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
+import { startAddPost } from '../../actions/posts';
 import PostForm from './PostForm';
 
-const AddPostPage = () => (
+export const AddPostPage = (props) => (
     <div>
         <h1>Add Post</h1>
-        <PostForm />
+        <PostForm onSubmit={props.addPost}/>
     </div>
 );
 
-export default AddPostPage;
+const mapDispatchToProps = (dispatch) => ({
+    addPost: (post) => {
+        dispatch(startAddPost(post));
+    }
+});
+
+export default connect(undefined, mapDispatchToProps)(AddPostPage);

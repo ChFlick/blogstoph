@@ -4,15 +4,25 @@ import { SingleDatePicker } from 'react-dates';
 class PostForm extends React.Component {
     state = {
         title: '',
-        text: '',
+        content: '',
         author: '',
         date: undefined,
         dateFocused: false,
-        isPublic: false
+        published: false
     };
 
     onSubmit = (e) => {
         e.preventDefault();
+
+        const { title, content, author, date, published } = this.state;
+
+        this.props.onSubmit({
+            title,
+            content,
+            author,
+            date: date.valueOf(),
+            published
+        });
     };
 
     onTitleChange = (e) => {
@@ -22,10 +32,10 @@ class PostForm extends React.Component {
         }));
     };
 
-    onTextChange = (e) => {
-        const text = e.target.value;
+    onContentChange = (e) => {
+        const content = e.target.value;
         this.setState(() => ({
-            text
+            content
         }));
     };
 
@@ -40,10 +50,10 @@ class PostForm extends React.Component {
         this.setState(() => ({ date }));
     };
 
-    onIsPublicChange = (e) => {
-        const isPublic = e.target.value === 'true'
+    onPublishedChange = (e) => {
+        const published = e.target.value === 'true';
         this.setState(() => ({
-            isPublic
+            published
         }));
     };
 
@@ -58,9 +68,9 @@ class PostForm extends React.Component {
                 />
                 <textarea
                     type="text"
-                    placeholder="Text"
-                    onChange={this.onTextChange}
-                    value={this.state.text}
+                    placeholder="Content"
+                    onChange={this.onContentChange}
+                    value={this.state.content}
                 />
                 <input
                     type="text"
@@ -77,11 +87,11 @@ class PostForm extends React.Component {
                     displayFormat="DD.MM.YYYY"
                 />
                 <div>
-                    Public:
+                    Published:
                 <input
                         type="checkbox"
-                        onChange={this.onIsPublicChange}
-                        value={this.state.isPublic}
+                        onChange={this.onPublishedChange}
+                        value={this.state.published}
                     />
                 </div>
                 <div>

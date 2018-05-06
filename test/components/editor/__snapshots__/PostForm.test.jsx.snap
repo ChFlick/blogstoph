@@ -12,7 +12,7 @@ exports[`renders the post form correctly 1`] = `
   />
   <textarea
     onChange={[Function]}
-    placeholder="Text"
+    placeholder="Content"
     type="text"
     value=""
   />
@@ -108,7 +108,7 @@ exports[`renders the post form correctly 1`] = `
     withPortal={false}
   />
   <div>
-    Public:
+    Published:
     <input
       onChange={[Function]}
       type="checkbox"

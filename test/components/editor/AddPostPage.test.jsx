@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import AddPostPage from '../../../src/components/editor/AddPostPage';
+import { AddPostPage } from '../../../src/components/editor/AddPostPage';
 import PostForm from '../../../src/components/editor/PostForm';
 
 test('should render the add post page correctly', () => {
