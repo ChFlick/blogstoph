@@ -79,7 +79,7 @@ class PostForm extends React.Component {
                 {this.state.error && <p>{this.state.error}</p>}
                 <input
                     type="text"
-                    placeholder="Title"
+                    placeholder="Title *"
                     onChange={this.onTitleChange}
                     value={this.state.title}
                 />

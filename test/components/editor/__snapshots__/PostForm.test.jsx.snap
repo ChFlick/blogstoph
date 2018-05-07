@@ -6,7 +6,7 @@ exports[`renders the post form correctly 1`] = `
 >
   <input
     onChange={[Function]}
-    placeholder="Title"
+    placeholder="Title *"
     type="text"
     value=""
   />
