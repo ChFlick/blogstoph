@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment';
 import { SingleDatePicker } from 'react-dates';
 
 class PostForm extends React.Component {
@@ -6,9 +7,10 @@ class PostForm extends React.Component {
         title: '',
         content: '',
         author: '',
-        date: undefined,
+        date: moment(),
         dateFocused: false,
-        published: false
+        published: false,
+        error: ''
     };
 
     onSubmit = (e) => {
@@ -16,13 +18,27 @@ class PostForm extends React.Component {
 
         const { title, content, author, date, published } = this.state;
 
-        this.props.onSubmit({
-            title,
-            content,
-            author,
-            date: date.valueOf(),
-            published
-        });
+        if (published && (!title || !content || !author || !date)) {
+            this.setState(() => ({
+                error: 'Please provide all information when publishing a post.'
+            }));
+        } else if (!title) {
+            this.setState(() => ({
+                error: 'Please provide a title to identify the post.'
+            }));
+        } else {
+            this.setState(() => ({
+                error: ''
+            }));
+
+            this.props.onSubmit({
+                title,
+                content,
+                author,
+                date: date.valueOf(),
+                published
+            });
+        }
     };
 
     onTitleChange = (e) => {
@@ -51,7 +67,7 @@ class PostForm extends React.Component {
     };
 
     onPublishedChange = (e) => {
-        const published = e.target.value === 'true';
+        const published = e.target.checked;
         this.setState(() => ({
             published
         }));
@@ -60,6 +76,7 @@ class PostForm extends React.Component {
     render() {
         return (
             <form onSubmit={this.onSubmit}>
+                {this.state.error && <p>{this.state.error}</p>}
                 <input
                     type="text"
                     placeholder="Title"
