@@ -2,7 +2,10 @@
 
 exports[`should render the dashboard page correctly 1`] = `
 <div>
-  Editor Dasboard page content
+  <h1>
+    Editor Dashboard
+  </h1>
+  <Connect(PostList) />
   <Link
     replace={false}
     to="./addPost"
