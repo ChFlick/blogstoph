@@ -105,7 +105,7 @@ class PostForm extends React.Component {
                 />
                 <div>
                     Published:
-                <input
+                    <input
                         type="checkbox"
                         onChange={this.onPublishedChange}
                         value={this.state.published}
