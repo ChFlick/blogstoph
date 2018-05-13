@@ -10,6 +10,7 @@ import 'react-dates/initialize';
 import { firebase } from './firebase/firebase';
 import LoadingPage from './components/LoadingPage';
 import { login, logout } from './actions/auth';
+import { startSetPosts } from './actions/posts';
 import moment from 'moment';
 
 moment.locale('de');
@@ -35,13 +36,17 @@ ReactDOM.render(<LoadingPage />, document.getElementById('app'));
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
         store.dispatch(login(user.uid));
-        renderApp();
+        store.dispatch(startSetPosts()).then(() => {
+            renderApp();
+        });
         if (history.location.pathname === '/login'){
             history.push('/editor/dashboard');
         }
     } else {
         store.dispatch(logout());
-        renderApp();
+        store.dispatch(startSetPosts()).then(() => {
+            renderApp();
+        });
         if (history.location.pathname.includes('editor')){
             history.push('/');
         }

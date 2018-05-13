@@ -1,7 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`post list should render correctly 1`] = `
+exports[`post list should render correctly with posts 1`] = `
 <div>
-  render
+  <div
+    key="1"
+  >
+    Some Title
+  </div>
+  <div
+    key="2"
+  >
+    Some Title 2
+  </div>
+  <div
+    key="3"
+  >
+    Some Title 3
+  </div>
+</div>
+`;
+
+exports[`post list should render correctly without posts 1`] = `
+<div>
+  <p>
+    There are no posts available
+  </p>
 </div>
 `;

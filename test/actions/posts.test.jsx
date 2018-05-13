@@ -1,10 +1,11 @@
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 
-import { startAddPost, addPost } from '../../src/actions/posts';
+import { startAddPost, addPost, startSetPosts, setPosts } from '../../src/actions/posts';
 import { publishedPosts } from '../fixtures/posts';
 
 import database from '../../src/firebase/firebase';
+import { isArray } from 'util';
 
 const createMockStore = configureMockStore([thunk]);
 
@@ -36,5 +37,54 @@ test('startAddPost should call addPost', (done) => {
         });
 
         done();
+    });
+});
+
+test('setPosts should generate an action object', () => {
+    const posts = publishedPosts;
+
+    expect(setPosts(posts)).toEqual({
+        type: 'SET_POSTS',
+        posts
+    });
+});
+
+describe('startSetPosts', () => {
+    test('should call setPosts', (done) => {
+        const store = createMockStore({});
+
+        store.dispatch(startSetPosts()).then(() => {
+            const actions = store.getActions();
+            expect(actions.length).toBe(1);
+            expect(actions[0].type).toEqual('SET_POSTS');
+
+            done();
+        });
+    });
+
+    test('should call setPosts', (done) => {
+        const store = createMockStore({});
+
+        store.dispatch(startSetPosts()).then(() => {
+            const actions = store.getActions();
+            expect(actions.length).toBe(1);
+            expect(actions[0].type).toEqual('SET_POSTS');
+
+            done();
+        });
+    });
+
+    test('should set the posts correctly', (done) => {
+        const store = createMockStore({});
+
+        database.ref('posts').set(publishedPosts)
+        .then(() => store.dispatch(startSetPosts()))
+        .then(() => {
+            const actions = store.getActions();
+            expect(actions.length).toBe(1);
+            expect(actions[0].posts).toEqual(publishedPosts);
+
+            done();
+        });
     });
 });
