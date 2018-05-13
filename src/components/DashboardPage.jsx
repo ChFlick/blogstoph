@@ -1,8 +1,11 @@
 import React from 'react';
 
+import PostList from './PostList';
+
 const DashboardPage = () => (
     <div>
-        Dasboard page content
+        <h1>Dashboard</h1>
+        <PostList />
     </div>
 );
 

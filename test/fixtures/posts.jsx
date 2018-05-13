@@ -2,7 +2,7 @@ export const publishedPosts = [{
     id: 1,
     title: 'Some Title',
     content: 'This is a Content of a Post...',
-    createdAt: 0,
+    date: 0,
     author: 'Author of 1',
     published: true,
 },
@@ -10,7 +10,7 @@ export const publishedPosts = [{
     id: 2,
     title: 'Some Title 2',
     content: 'This is a second Content of a Post...',
-    createdAt: 1000,
+    date: 1000,
     author: 'Author of 2',
     published: true,
 },
@@ -18,7 +18,24 @@ export const publishedPosts = [{
     id: 3,
     title: 'Some Title 3',
     content: 'This is a third Content of a Post...',
-    createdAt: 2000,
+    date: 2000,
     author: 'Author of 3',
     published: true,
+}];
+
+export const privatePosts = [{
+    id: 11,
+    title: 'Some Title',
+    content: 'This is a Content of a Post...',
+    date: 0,
+    author: 'Author of 1',
+    published: false,
+},
+{
+    id: 12,
+    title: 'Some Title 2',
+    content: 'This is a second Content of a Post...',
+    date: 1000,
+    author: 'Author of 2',
+    published: false,
 }];

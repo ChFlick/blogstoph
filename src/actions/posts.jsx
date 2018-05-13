@@ -5,9 +5,18 @@ export const addPost = (post) => ({
     post
 });
 
-export const startAddPost = (post = {}) => {
+export const startAddPost = ({ title, content, author, date, published }) => {
     return (dispatch, getState) => {
-        return database.ref('posts').push(post).then((ref) => {
+        const visibility = published ? 'public' : 'private';
+
+        const post = {
+            title,
+            content,
+            author,
+            date
+        };
+
+        return database.ref('posts/' + visibility).push(post).then((ref) => {
             dispatch(addPost({
                 id: ref.key,
                 ...post
@@ -23,15 +32,37 @@ export const setPosts = (posts) => ({
 
 export const startSetPosts = () => {
     return (dispatch, getState) => {
-        return database.ref('posts').once('value').then((snapshot) => {
+        return Promise.all((getState().auth && getState().auth.uid) ?
+            [database.ref('posts/public').once('value'), database.ref('posts/private').once('value')] :
+            [database.ref('posts/public').once('value')]
+        ).then(([publicPostsSnapshot, privatePostsSnapshot]) => {
             const posts = [];
 
-            snapshot.forEach((postSnapshot) => {
+            publicPostsSnapshot.forEach((postSnapshot) => {
+                const { title, author, content, date } = postSnapshot.val();
                 posts.push({
                     id: postSnapshot.key,
-                    ...postSnapshot.val()
+                    published: true,
+                    title,
+                    author,
+                    content,
+                    date
                 });
             });
+
+            if (privatePostsSnapshot) {
+                privatePostsSnapshot.forEach((postSnapshot) => {
+                    const { title, author, content, date } = postSnapshot.val();
+                    posts.push({
+                        id: postSnapshot.key,
+                        published: false,
+                        title,
+                        author,
+                        content,
+                        date
+                    });
+                });
+            }
 
             dispatch(setPosts(posts));
         });

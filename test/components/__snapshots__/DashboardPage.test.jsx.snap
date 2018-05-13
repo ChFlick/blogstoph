@@ -2,6 +2,9 @@
 
 exports[`should render the dashboard page correctly 1`] = `
 <div>
-  Dasboard page content
+  <h1>
+    Dashboard
+  </h1>
+  <Connect(PostList) />
 </div>
 `;

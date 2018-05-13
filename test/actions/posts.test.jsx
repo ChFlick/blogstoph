@@ -2,21 +2,36 @@ import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 
 import { startAddPost, addPost, startSetPosts, setPosts } from '../../src/actions/posts';
-import { publishedPosts } from '../fixtures/posts';
+import { publishedPosts, privatePosts } from '../fixtures/posts';
 
 import database from '../../src/firebase/firebase';
-import { isArray } from 'util';
 
 const createMockStore = configureMockStore([thunk]);
 
 beforeEach((done) => {
-    database.ref('posts').set({}).then(() => {
-        done();
+    const publicPostData = {};
+    publishedPosts.forEach(({ id, title, content, author, date, published }) => {
+        publicPostData[id] = { title, content, author, date };
     });
+
+    const privatePostData = {};
+    privatePosts.forEach(({ id, title, content, author, date, published }) => {
+        privatePostData[id] = { title, content, author, date };
+    });
+
+    Promise.all([
+        database.ref(`posts/public`).set(publicPostData),
+        database.ref(`posts/private`).set(privatePostData)]).then(() => done());
 });
 
 test('addPost should generate an action object', () => {
-    const post = publishedPosts[0];
+    const post = {
+        title: 'test',
+        content: 'testC',
+        author: 'testA',
+        date: 200,
+        published: false
+    };
 
     expect(addPost(post)).toEqual({
         type: 'ADD_POST',
@@ -24,16 +39,48 @@ test('addPost should generate an action object', () => {
     });
 });
 
-test('startAddPost should call addPost', (done) => {
+test('startAddPost should call addPost public', (done) => {
     const store = createMockStore({});
-    const post = publishedPosts[1];
+    const post = {
+        title: 'test',
+        content: 'testC',
+        author: 'testA',
+        date: 200,
+    };
 
-    store.dispatch(startAddPost(post)).then(() => {
+    store.dispatch(startAddPost({published: true, ...post})).then(() => {
         const actions = store.getActions();
         expect(actions.length).toBe(1);
         expect(actions[0]).toEqual({
             type: 'ADD_POST',
-            post
+            post: {
+                id: expect.any(String),
+                ...post
+            }
+        });
+
+        done();
+    });
+});
+
+test('startAddPost should call addPost private', (done) => {
+    const store = createMockStore({});
+    const post = {
+        title: 'test',
+        content: 'testC',
+        author: 'testA',
+        date: 200
+    };
+
+    store.dispatch(startAddPost({published: false, ...post})).then(() => {
+        const actions = store.getActions();
+        expect(actions.length).toBe(1);
+        expect(actions[0]).toEqual({
+            type: 'ADD_POST',
+            post: {
+                id: expect.any(String),
+                ...post
+            }
         });
 
         done();
@@ -62,29 +109,29 @@ describe('startSetPosts', () => {
         });
     });
 
-    test('should call setPosts', (done) => {
+    test('should set the posts correctly when logged out', (done) => {
         const store = createMockStore({});
 
-        store.dispatch(startSetPosts()).then(() => {
-            const actions = store.getActions();
-            expect(actions.length).toBe(1);
-            expect(actions[0].type).toEqual('SET_POSTS');
+        store.dispatch(startSetPosts())
+            .then(() => {
+                const actions = store.getActions();
+                expect(actions.length).toBe(1);
+                expect(actions[0].posts.length).toEqual(publishedPosts.length);
 
-            done();
-        });
+                done();
+            });
     });
 
-    test('should set the posts correctly', (done) => {
-        const store = createMockStore({});
+    test('should set the posts correctly when logged in', (done) => {
+        const store = createMockStore({ auth: { uid: 'testId' }});
 
-        database.ref('posts').set(publishedPosts)
-        .then(() => store.dispatch(startSetPosts()))
-        .then(() => {
-            const actions = store.getActions();
-            expect(actions.length).toBe(1);
-            expect(actions[0].posts).toEqual(publishedPosts);
+        store.dispatch(startSetPosts())
+            .then(() => {
+                const actions = store.getActions();
+                expect(actions.length).toBe(1);
+                expect(actions[0].posts.length).toEqual(privatePosts.length + publishedPosts.length);
 
-            done();
-        });
+                done();
+            });
     });
 });
