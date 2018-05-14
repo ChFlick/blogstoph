@@ -3,15 +3,20 @@ import moment from 'moment';
 import { SingleDatePicker } from 'react-dates';
 
 class PostForm extends React.Component {
-    state = {
-        title: '',
-        content: '',
-        author: '',
-        date: moment(),
-        dateFocused: false,
-        published: false,
-        error: ''
-    };
+    constructor(props) {
+        super(props);
+
+        const post = props.post || {};
+        this.state = {
+            title: post.title || '',
+            content: post.content || '',
+            author: post.author || '',
+            date: moment(post.date) || moment(),
+            dateFocused: false,
+            published: post.published || false,
+            error: ''
+        };
+      }
 
     onSubmit = (e) => {
         e.preventDefault();

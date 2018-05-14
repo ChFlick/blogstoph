@@ -50,6 +50,23 @@ test('should set published flag', () => {
     expect(wrapper.state('published')).toEqual(published);
 });
 
+test('allows to set a post from outside', () => {
+    const post = {
+        title: 'test',
+        author: 'hello',
+        date: 0,
+        published: true
+    };
+
+    const wrapper = shallow(<PostForm post={post}/>);
+
+    expect(wrapper.state('title')).toEqual(post.title);
+    expect(wrapper.state('author')).toEqual(post.author);
+    expect(wrapper.state('date').valueOf()).toEqual(post.date);
+    expect(wrapper.state('published')).toEqual(post.published);
+    expect(wrapper.state('content')).toEqual('');
+});
+
 describe('in onSubmit', () => {
     test('shouldn\'t call onSubmit at submission with no data', () => {
         const onSubmitSpy = jest.fn();
