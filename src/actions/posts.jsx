@@ -31,40 +31,32 @@ export const setPosts = (posts) => ({
 });
 
 export const startSetPosts = () => {
+    const addPostFromSnapshot = (published, posts) => (postSnapshot) => {
+        posts.push({
+            id: postSnapshot.key,
+            published: !!published,
+            ...postSnapshot.val()
+        });
+    };
+
     return (dispatch, getState) => {
-        return Promise.all((getState().auth && getState().auth.uid) ?
-            [database.ref('posts/public').once('value'), database.ref('posts/private').once('value')] :
-            [database.ref('posts/public').once('value')]
+        return Promise.all(getPostsValueDBReferenceByAuth(getState)
         ).then(([publicPostsSnapshot, privatePostsSnapshot]) => {
             const posts = [];
-
-            publicPostsSnapshot.forEach((postSnapshot) => {
-                const { title, author, content, date } = postSnapshot.val();
-                posts.push({
-                    id: postSnapshot.key,
-                    published: true,
-                    title,
-                    author,
-                    content,
-                    date
-                });
-            });
+            publicPostsSnapshot.forEach(addPostFromSnapshot(true, posts));
 
             if (privatePostsSnapshot) {
-                privatePostsSnapshot.forEach((postSnapshot) => {
-                    const { title, author, content, date } = postSnapshot.val();
-                    posts.push({
-                        id: postSnapshot.key,
-                        published: false,
-                        title,
-                        author,
-                        content,
-                        date
-                    });
-                });
+                privatePostsSnapshot.forEach(addPostFromSnapshot(false, posts));
             }
 
             dispatch(setPosts(posts));
         });
     };
 };
+
+function getPostsValueDBReferenceByAuth(getState) {
+    return (getState().auth && getState().auth.uid) ?
+        [database.ref('posts/public').once('value'), database.ref('posts/private').once('value')] :
+        [database.ref('posts/public').once('value')];
+}
+
