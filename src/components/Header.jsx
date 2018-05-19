@@ -28,7 +28,7 @@ export const Header = ({ isAuthenticated, startLogout }) => {
 };
 
 const mapStateToProps = (state) => ({
-    isAuthenticated: !!state.uid
+    isAuthenticated: !!state.auth.uid
 });
 
 const mapDispatchToProps = (dispatch) => ({

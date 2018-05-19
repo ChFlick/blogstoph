@@ -12,7 +12,10 @@ export const EditorHeader = ({ startLogout }) => (
                 <Link className="header__title" to="/editor/dashboard">
                     <h1>Blogstoph</h1>
                 </Link>
-                <button className="button button--link" onClick={startLogout}>Logout</button>
+                <div>
+                    <Link className="button button--link" to="/dashboard">Visitor Area</Link>
+                    <button className="button button--link" onClick={startLogout}>Logout</button>
+                </div>
             </div>
         </div>
     </header>
