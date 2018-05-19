@@ -19,12 +19,21 @@ exports[`should render EditorHeader correctly 1`] = `
           Blogstoph
         </h1>
       </Link>
-      <button
-        className="button button--link"
-        onClick={[Function]}
-      >
-        Logout
-      </button>
+      <div>
+        <Link
+          className="button button--link"
+          replace={false}
+          to="/dashboard"
+        >
+          Visitor Area
+        </Link>
+        <button
+          className="button button--link"
+          onClick={[Function]}
+        >
+          Logout
+        </button>
+      </div>
     </div>
   </div>
 </header>
