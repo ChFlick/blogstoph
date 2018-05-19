@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import PostList from '../PostList';
+import PostList from './PostList';
 
 const EditorDashboardPage = () => (
     <div>
