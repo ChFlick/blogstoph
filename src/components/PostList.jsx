@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 export const PostList = (props) => (
     <div>
@@ -8,7 +9,7 @@ export const PostList = (props) => (
                 <p>There are no posts available</p>
             ) : (
                 props.posts.map((post) => (
-                    <div key={post.id}>{post.title}</div>
+                    <Link to={`post/${post.id}`} key={post.id}>{post.title}</Link>
                 ))
             )
         }

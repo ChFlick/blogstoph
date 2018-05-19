@@ -2,21 +2,27 @@
 
 exports[`post list should render correctly with posts 1`] = `
 <div>
-  <div
+  <Link
     key="1"
+    replace={false}
+    to="post/1"
   >
     Some Title
-  </div>
-  <div
+  </Link>
+  <Link
     key="2"
+    replace={false}
+    to="post/2"
   >
     Some Title 2
-  </div>
-  <div
+  </Link>
+  <Link
     key="3"
+    replace={false}
+    to="post/3"
   >
     Some Title 3
-  </div>
+  </Link>
 </div>
 `;
 
