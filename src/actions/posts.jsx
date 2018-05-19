@@ -25,6 +25,12 @@ export const startAddPost = ({ title, content, author, date, published }) => {
     };
 };
 
+export const editPost = (id, post) => ({
+    type: 'EDIT_POST',
+    id,
+    post
+});
+
 export const setPosts = (posts) => ({
     type: 'SET_POSTS',
     posts

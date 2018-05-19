@@ -1,7 +1,7 @@
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 
-import { startAddPost, addPost, startSetPosts, setPosts } from '../../src/actions/posts';
+import { startAddPost, addPost, editPost, startSetPosts, setPosts } from '../../src/actions/posts';
 import { publishedPosts, privatePosts } from '../fixtures/posts';
 
 import database from '../../src/firebase/firebase';
@@ -135,3 +135,68 @@ describe('startSetPosts', () => {
             });
     });
 });
+
+test('editPost should generate an action object', () => {
+    const postId = 'asdf';
+    const post = {
+        title: 'test',
+        content: 'testC',
+        author: 'testA',
+        date: 200,
+        published: false
+    };
+
+    expect(editPost(postId, post)).toEqual({
+        type: 'EDIT_POST',
+        id: postId,
+        post
+    });
+});
+
+// test('startAddPost should call addPost public', (done) => {
+//     const store = createMockStore({});
+//     const post = {
+//         title: 'test',
+//         content: 'testC',
+//         author: 'testA',
+//         date: 200,
+//     };
+
+//     store.dispatch(startAddPost({published: true, ...post})).then(() => {
+//         const actions = store.getActions();
+//         expect(actions.length).toBe(1);
+//         expect(actions[0]).toEqual({
+//             type: 'ADD_POST',
+//             post: {
+//                 id: expect.any(String),
+//                 ...post
+//             }
+//         });
+
+//         done();
+//     });
+// });
+
+// test('startAddPost should call addPost private', (done) => {
+//     const store = createMockStore({});
+//     const post = {
+//         title: 'test',
+//         content: 'testC',
+//         author: 'testA',
+//         date: 200
+//     };
+
+//     store.dispatch(startAddPost({published: false, ...post})).then(() => {
+//         const actions = store.getActions();
+//         expect(actions.length).toBe(1);
+//         expect(actions[0]).toEqual({
+//             type: 'ADD_POST',
+//             post: {
+//                 id: expect.any(String),
+//                 ...post
+//             }
+//         });
+
+//         done();
+//     });
+// });
