@@ -31,6 +31,31 @@ export const editPost = (id, post) => ({
     post
 });
 
+export const startEditPost = (id, { title, content, author, date, published }) => {
+    return (dispatch, getState) => {
+        const prevPostPublished = getState().posts.find((post) => post.id === id).published;
+        const visibility = published ? 'public' : 'private';
+        const post = {
+            title,
+            content,
+            author,
+            date
+        };
+
+        if (prevPostPublished !== published) {
+            const prevPostVisibility = prevPostPublished ? 'public' : 'private';
+            database.ref(`posts/${prevPostVisibility}/${id}`).remove();
+        }
+
+        return database.ref(`posts/${visibility}/${id}`).set(post).then((ref) => {
+            dispatch(editPost(
+                id,
+                post
+            ));
+        });
+    };
+};
+
 export const setPosts = (posts) => ({
     type: 'SET_POSTS',
     posts

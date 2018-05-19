@@ -1,7 +1,7 @@
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 
-import { startAddPost, addPost, editPost, startSetPosts, setPosts } from '../../src/actions/posts';
+import { startAddPost, addPost, startEditPost, editPost, startSetPosts, setPosts } from '../../src/actions/posts';
 import { publishedPosts, privatePosts } from '../fixtures/posts';
 
 import database from '../../src/firebase/firebase';
@@ -48,7 +48,7 @@ test('startAddPost should call addPost public', (done) => {
         date: 200,
     };
 
-    store.dispatch(startAddPost({published: true, ...post})).then(() => {
+    store.dispatch(startAddPost({ published: true, ...post })).then(() => {
         const actions = store.getActions();
         expect(actions.length).toBe(1);
         expect(actions[0]).toEqual({
@@ -72,7 +72,7 @@ test('startAddPost should call addPost private', (done) => {
         date: 200
     };
 
-    store.dispatch(startAddPost({published: false, ...post})).then(() => {
+    store.dispatch(startAddPost({ published: false, ...post })).then(() => {
         const actions = store.getActions();
         expect(actions.length).toBe(1);
         expect(actions[0]).toEqual({
@@ -123,7 +123,7 @@ describe('startSetPosts', () => {
     });
 
     test('should set the posts correctly when logged in', (done) => {
-        const store = createMockStore({ auth: { uid: 'testId' }});
+        const store = createMockStore({ auth: { uid: 'testId' } });
 
         store.dispatch(startSetPosts())
             .then(() => {
@@ -152,51 +152,69 @@ test('editPost should generate an action object', () => {
         post
     });
 });
+describe('in startEditPost', () => {
+    test('should call editPost when changing a post', (done) => {
+        const store = createMockStore({ posts: [...publishedPosts, ...privatePosts] });
+        const id = publishedPosts[0].id;
+        const post = {
+            title: 'changed',
+            content: 'changed',
+            author: 'changed',
+            date: 123456
+        };
 
-// test('startAddPost should call addPost public', (done) => {
-//     const store = createMockStore({});
-//     const post = {
-//         title: 'test',
-//         content: 'testC',
-//         author: 'testA',
-//         date: 200,
-//     };
+        store.dispatch(startEditPost(id, { published: true, ...post })).then(() => {
+            const actions = store.getActions();
+            expect(actions.length).toBe(1);
+            expect(actions[0]).toEqual({
+                type: 'EDIT_POST',
+                id,
+                post
+            });
 
-//     store.dispatch(startAddPost({published: true, ...post})).then(() => {
-//         const actions = store.getActions();
-//         expect(actions.length).toBe(1);
-//         expect(actions[0]).toEqual({
-//             type: 'ADD_POST',
-//             post: {
-//                 id: expect.any(String),
-//                 ...post
-//             }
-//         });
+            done();
+        });
+    });
 
-//         done();
-//     });
-// });
+    test('should change a post from private to public', (done) => {
+        const store = createMockStore({ posts: [...publishedPosts, ...privatePosts] });
+        const id = privatePosts[0].id;
+        const post = {
+            title: 'changed',
+            content: 'changed',
+            author: 'changed',
+            date: 123456,
+            published: true
+        };
 
-// test('startAddPost should call addPost private', (done) => {
-//     const store = createMockStore({});
-//     const post = {
-//         title: 'test',
-//         content: 'testC',
-//         author: 'testA',
-//         date: 200
-//     };
+        store.dispatch(startEditPost(id, post)).then(() => {
+            return database.ref('posts').once('value');
+        }).then((snapshot) => {
+            expect(snapshot.hasChild(`private/${id}`)).toBeFalsy();
+            expect(snapshot.hasChild(`public/${id}`)).toBeTruthy();
 
-//     store.dispatch(startAddPost({published: false, ...post})).then(() => {
-//         const actions = store.getActions();
-//         expect(actions.length).toBe(1);
-//         expect(actions[0]).toEqual({
-//             type: 'ADD_POST',
-//             post: {
-//                 id: expect.any(String),
-//                 ...post
-//             }
-//         });
+            done();
+        });
+    });
 
-//         done();
-//     });
-// });
+    test('should change a post from public to private', (done) => {
+        const store = createMockStore({ posts: [...publishedPosts, ...privatePosts] });
+        const id = publishedPosts[0].id;
+        const post = {
+            title: 'changed',
+            content: 'changed',
+            author: 'changed',
+            date: 123456,
+            published: false
+        };
+
+        store.dispatch(startEditPost(id, post)).then(() => {
+            return database.ref('posts').once('value');
+        }).then((snapshot) => {
+            expect(snapshot.hasChild(`private/${id}`)).toBeTruthy();
+            expect(snapshot.hasChild(`public/${id}`)).toBeFalsy();
+
+            done();
+        });
+    });
+});
