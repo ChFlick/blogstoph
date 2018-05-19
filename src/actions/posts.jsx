@@ -20,10 +20,10 @@ export const startAddPost = (post) => {
     };
 };
 
-export const editPost = (id, post) => ({
+export const editPost = (id, updates) => ({
     type: 'EDIT_POST',
     id,
-    post
+    updates
 });
 
 export const startEditPost = (id, post) => {

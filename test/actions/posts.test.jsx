@@ -151,7 +151,7 @@ test('editPost should generate an action object', () => {
     expect(editPost(postId, post)).toEqual({
         type: 'EDIT_POST',
         id: postId,
-        post
+        updates: post
     });
 });
 describe('in startEditPost', () => {
@@ -169,11 +169,7 @@ describe('in startEditPost', () => {
         store.dispatch(startEditPost(id, post)).then(() => {
             const actions = store.getActions();
             expect(actions.length).toBe(1);
-            expect(actions[0]).toEqual({
-                type: 'EDIT_POST',
-                id,
-                post
-            });
+            expect(actions[0]).toEqual(editPost(id, post));
 
             done();
         });

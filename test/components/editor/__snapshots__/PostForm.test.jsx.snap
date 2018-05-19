@@ -110,9 +110,9 @@ exports[`renders the post form correctly 1`] = `
   <div>
     Published:
     <input
+      checked={false}
       onChange={[Function]}
       type="checkbox"
-      value={false}
     />
   </div>
   <div>
