@@ -46,9 +46,10 @@ test('startAddPost should call addPost public', (done) => {
         content: 'testC',
         author: 'testA',
         date: 200,
+        published: true
     };
 
-    store.dispatch(startAddPost({ published: true, ...post })).then(() => {
+    store.dispatch(startAddPost(post)).then(() => {
         const actions = store.getActions();
         expect(actions.length).toBe(1);
         expect(actions[0]).toEqual({
@@ -69,10 +70,11 @@ test('startAddPost should call addPost private', (done) => {
         title: 'test',
         content: 'testC',
         author: 'testA',
-        date: 200
+        date: 200,
+        published: true
     };
 
-    store.dispatch(startAddPost({ published: false, ...post })).then(() => {
+    store.dispatch(startAddPost(post)).then(() => {
         const actions = store.getActions();
         expect(actions.length).toBe(1);
         expect(actions[0]).toEqual({
@@ -160,10 +162,11 @@ describe('in startEditPost', () => {
             title: 'changed',
             content: 'changed',
             author: 'changed',
-            date: 123456
+            date: 123456,
+            published: true
         };
 
-        store.dispatch(startEditPost(id, { published: true, ...post })).then(() => {
+        store.dispatch(startEditPost(id, post)).then(() => {
             const actions = store.getActions();
             expect(actions.length).toBe(1);
             expect(actions[0]).toEqual({

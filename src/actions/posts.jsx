@@ -5,20 +5,15 @@ export const addPost = (post) => ({
     post
 });
 
-export const startAddPost = ({ title, content, author, date, published }) => {
+export const startAddPost = (post) => {
+    const { title, content, author, date, published } = post;
+
     return (dispatch, getState) => {
         const visibility = published ? 'public' : 'private';
-
-        const post = {
-            title,
-            content,
-            author,
-            date
-        };
-
-        return database.ref('posts/' + visibility).push(post).then((ref) => {
+        return database.ref('posts/' + visibility).push({ title, content, author, date }).then((ref) => {
             dispatch(addPost({
                 id: ref.key,
+                published,
                 ...post
             }));
         });
@@ -31,23 +26,19 @@ export const editPost = (id, post) => ({
     post
 });
 
-export const startEditPost = (id, { title, content, author, date, published }) => {
+export const startEditPost = (id, post) => {
+    const { title, content, author, date, published } = post;
+
     return (dispatch, getState) => {
         const prevPostPublished = getState().posts.find((post) => post.id === id).published;
         const visibility = published ? 'public' : 'private';
-        const post = {
-            title,
-            content,
-            author,
-            date
-        };
 
         if (prevPostPublished !== published) {
             const prevPostVisibility = prevPostPublished ? 'public' : 'private';
             database.ref(`posts/${prevPostVisibility}/${id}`).remove();
         }
 
-        return database.ref(`posts/${visibility}/${id}`).set(post).then((ref) => {
+        return database.ref(`posts/${visibility}/${id}`).set({ title, content, author, date }).then((ref) => {
             dispatch(editPost(
                 id,
                 post
