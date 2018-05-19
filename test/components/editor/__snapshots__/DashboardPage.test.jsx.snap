@@ -8,7 +8,7 @@ exports[`should render the dashboard page correctly 1`] = `
   <Connect(PostList) />
   <Link
     replace={false}
-    to="./addPost"
+    to="./add"
   >
     Add Post
   </Link>

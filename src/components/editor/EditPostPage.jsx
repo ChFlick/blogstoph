@@ -1,13 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-// import { startAddPost } from '../../actions/posts';
+import { startEditPost } from '../../actions/posts';
 import PostForm from './PostForm';
 
 export class EditPostPage extends React.Component {
     onSubmit = (post) => {
-    //     this.props.addPost(post);
-    //     this.props.history.push('/');
+        this.props.edit(this.props.match.params.id, post);
+        this.props.history.push('/');
     };
 
     render() {
@@ -21,7 +21,7 @@ export class EditPostPage extends React.Component {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-    // addPost: (post) => dispatch(startAddPost(post))
+    editPost: (id, post) => dispatch(startEditPost(id, post))
 });
 
 export default connect(undefined, mapDispatchToProps)(EditPostPage);

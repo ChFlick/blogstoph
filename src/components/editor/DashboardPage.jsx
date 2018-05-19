@@ -7,7 +7,7 @@ const EditorDashboardPage = () => (
     <div>
         <h1>Editor Dashboard</h1>
         <PostList />
-        <Link to="./addPost">Add Post</Link>
+        <Link to="./add">Add Post</Link>
     </div>
 );
 
