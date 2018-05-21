@@ -12,7 +12,9 @@ import LoadingPage from './components/LoadingPage';
 import { login, logout } from './actions/auth';
 import { startSetPosts } from './actions/posts';
 import moment from 'moment';
+import Modal from 'react-modal';
 
+Modal.setAppElement('#app');
 moment.locale('de');
 
 const store = configureStore();

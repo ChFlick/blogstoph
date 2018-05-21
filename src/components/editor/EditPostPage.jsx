@@ -1,13 +1,26 @@
 import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
+import Modal from 'react-modal';
 
 import { startEditPost, startRemovePost } from '../../actions/posts';
 import PostForm from './PostForm';
 
 export class EditPostPage extends React.Component {
+    state = {
+        modalIsOpen: false
+    };
+
+    openModal = () => {
+        this.setState(() => ({ modalIsOpen: true }));
+    }
+
+    closeModal = () => {
+        this.setState(() => ({ modalIsOpen: false }));
+    }
+
     goBack = () => {
         this.props.history.push('/editor/dashboard');
-    }
+    };
 
     onSubmit = (post) => {
         this.props.editPost(this.props.match.params.id, post);
@@ -24,7 +37,18 @@ export class EditPostPage extends React.Component {
             <Fragment>
                 <h1>Edit Post</h1>
                 <PostForm post={this.props.post} onSubmit={this.onSubmit} onBack={this.goBack} />
-                <button type="button" onClick={this.onRemove}>Remove Post</button>
+                <button type="button" onClick={this.openModal}>Remove Post</button>
+
+                <Modal
+                    isOpen={this.state.modalIsOpen}
+                    onRequestClose={this.closeModal}
+                    contentLabel="Remove Post"
+                >
+                    <h2>Remove Post</h2>
+                    <p>Are you sure you want to remove the post?</p>
+                    <button onClick={this.closeModal}>Cancel</button>
+                    <button onClick={this.onRemove}>Ok</button>
+                </Modal>
             </Fragment>
         );
     };
