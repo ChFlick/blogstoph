@@ -8,6 +8,7 @@ exports[`post list should render correctly with posts 1`] = `
     to="post/1"
   >
     Some Title
+    <br />
   </Link>
   <Link
     key="2"
@@ -15,6 +16,7 @@ exports[`post list should render correctly with posts 1`] = `
     to="post/2"
   >
     Some Title 2
+    <br />
   </Link>
   <Link
     key="3"
@@ -22,6 +24,7 @@ exports[`post list should render correctly with posts 1`] = `
     to="post/3"
   >
     Some Title 3
+    <br />
   </Link>
 </div>
 `;

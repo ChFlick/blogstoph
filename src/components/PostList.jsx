@@ -19,7 +19,7 @@ export const PostList = (props) => (
 );
 
 const mapStateToProps = (state) => ({
-    posts: state.posts || []
+    posts: (state.posts || []).filter((post = {}) => post.published === true)
 });
 
 export default connect(mapStateToProps)(PostList);

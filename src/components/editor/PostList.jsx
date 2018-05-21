@@ -9,7 +9,7 @@ export const PostList = (props) => (
                 <p>There are no posts available</p>
             ) : (
                 props.posts.map((post) => (
-                    <Link to={`post/${post.id}`} key={post.id}>{post.title}</Link>
+                    <Link to={`post/${post.id}`} key={post.id}>{post.title}<br/></Link>
                 ))
             )
         }
