@@ -1,14 +1,14 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 
 import PostList from './PostList';
 
 const EditorDashboardPage = () => (
-    <div>
+    <Fragment>
         <h1>Editor Dashboard</h1>
         <PostList />
         <Link to="./add">Add Post</Link>
-    </div>
+    </Fragment>
 );
 
 export default EditorDashboardPage;

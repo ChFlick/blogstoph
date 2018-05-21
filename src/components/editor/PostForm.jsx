@@ -117,6 +117,7 @@ class PostForm extends React.Component {
                     />
                 </div>
                 <div>
+                    <button type="button" onClick={this.props.onBack}>Back</button>
                     <button>Save Post</button>
                 </div>
             </form>

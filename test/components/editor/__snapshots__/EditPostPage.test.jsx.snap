@@ -6,6 +6,7 @@ exports[`should render the add post page correctly 1`] = `
     Edit Post
   </h1>
   <PostForm
+    onBack={[Function]}
     onSubmit={[Function]}
   />
 </React.Fragment>

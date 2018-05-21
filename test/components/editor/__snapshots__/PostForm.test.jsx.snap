@@ -116,6 +116,11 @@ exports[`renders the post form correctly 1`] = `
     />
   </div>
   <div>
+    <button
+      type="button"
+    >
+      Back
+    </button>
     <button>
       Save Post
     </button>

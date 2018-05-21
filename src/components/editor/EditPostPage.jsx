@@ -5,16 +5,20 @@ import { startEditPost } from '../../actions/posts';
 import PostForm from './PostForm';
 
 export class EditPostPage extends React.Component {
+    goBack = () => {
+        this.props.history.push('/editor/dashboard');
+    }
+
     onSubmit = (post) => {
         this.props.editPost(this.props.match.params.id, post);
-        this.props.history.push('/');
+        this.goBack();
     };
 
     render() {
         return (
             <Fragment>
                 <h1>Edit Post</h1>
-                <PostForm post={this.props.post} onSubmit={this.onSubmit} />
+                <PostForm post={this.props.post} onSubmit={this.onSubmit} onBack={this.goBack} />
             </Fragment>
         );
     };

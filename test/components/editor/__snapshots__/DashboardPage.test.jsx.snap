@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render the dashboard page correctly 1`] = `
-<div>
+<React.Fragment>
   <h1>
     Editor Dashboard
   </h1>
@@ -12,5 +12,5 @@ exports[`should render the dashboard page correctly 1`] = `
   >
     Add Post
   </Link>
-</div>
+</React.Fragment>
 `;
