@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
+import moment from 'moment';
 
 export const PostList = (props) => (
     <Fragment>
@@ -11,6 +12,7 @@ export const PostList = (props) => (
                     <Fragment key={post.id}>
                         <h3>{post.title}</h3>
                         <p>{post.content}</p>
+                        <span>By {post.author} at {moment(post.date).format('DD.MM.YYYY')}</span>
                     </Fragment>
                 ))
             )

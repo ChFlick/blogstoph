@@ -11,6 +11,12 @@ exports[`post list should render correctly with posts 1`] = `
     <p>
       This is a Content of a Post...
     </p>
+    <span>
+      By 
+      Author of 1
+       at 
+      01.01.1970
+    </span>
   </React.Fragment>
   <React.Fragment
     key="2"
@@ -21,6 +27,12 @@ exports[`post list should render correctly with posts 1`] = `
     <p>
       This is a second Content of a Post...
     </p>
+    <span>
+      By 
+      Author of 2
+       at 
+      01.01.1970
+    </span>
   </React.Fragment>
   <React.Fragment
     key="3"
@@ -31,6 +43,12 @@ exports[`post list should render correctly with posts 1`] = `
     <p>
       This is a third Content of a Post...
     </p>
+    <span>
+      By 
+      Author of 3
+       at 
+      01.01.1970
+    </span>
   </React.Fragment>
 </React.Fragment>
 `;
