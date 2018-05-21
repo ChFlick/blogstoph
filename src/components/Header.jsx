@@ -14,10 +14,10 @@ export const Header = ({ isAuthenticated, startLogout }) => {
                         <h1>Blogstoph</h1>
                     </Link>
                     {isAuthenticated ? (
-                        <Fragment>
+                        <div>
                             <Link className="button button--link" to="/editor/dashboard">Editor Area</Link>
                             <button className="button button--link" onClick={startLogout}>Logout</button>
-                        </Fragment>
+                        </div>
                     ) : (
                         <Link className="button button--link" to="/login">Login</Link>
                     )}
