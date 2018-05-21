@@ -16,6 +16,11 @@ exports[`renders the post form correctly 1`] = `
     type="text"
     value=""
   />
+  <Remarkable
+    container="div"
+    options={Object {}}
+    source=""
+  />
   <input
     onChange={[Function]}
     placeholder="Author"

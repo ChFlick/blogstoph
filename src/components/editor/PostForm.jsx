@@ -1,5 +1,6 @@
 import React from 'react';
 import moment from 'moment';
+import Markdown from 'react-remarkable';
 import { SingleDatePicker } from 'react-dates';
 
 class PostForm extends React.Component {
@@ -94,6 +95,7 @@ class PostForm extends React.Component {
                     onChange={this.onContentChange}
                     value={this.state.content}
                 />
+                <Markdown source={this.state.content} />
                 <input
                     type="text"
                     placeholder="Author"
