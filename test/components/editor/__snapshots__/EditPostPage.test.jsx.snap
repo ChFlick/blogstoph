@@ -9,5 +9,11 @@ exports[`should render the add post page correctly 1`] = `
     onBack={[Function]}
     onSubmit={[Function]}
   />
+  <button
+    onClick={[Function]}
+    type="button"
+  >
+    Remove Post
+  </button>
 </React.Fragment>
 `;

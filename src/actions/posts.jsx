@@ -1,5 +1,19 @@
 import database from '../firebase/firebase';
 
+export const removePost = (id) => ({
+    type: 'REMOVE_POST',
+    id
+});
+
+export const startRemovePost = (post) => {
+    return (dispatch, getState) => {
+        const visibility = post.published ? 'public' : 'private';
+        return database.ref(`posts/${visibility}/${post.id}`).remove().then((ref) => {
+            dispatch(removePost(post.id));
+        });
+    };
+};
+
 export const addPost = (post) => ({
     type: 'ADD_POST',
     post

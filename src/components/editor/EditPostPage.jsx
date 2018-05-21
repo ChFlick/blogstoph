@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 
-import { startEditPost } from '../../actions/posts';
+import { startEditPost, startRemovePost } from '../../actions/posts';
 import PostForm from './PostForm';
 
 export class EditPostPage extends React.Component {
@@ -14,11 +14,17 @@ export class EditPostPage extends React.Component {
         this.goBack();
     };
 
+    onRemove = () => {
+        this.props.removePost(this.props.post);
+        this.goBack();
+    };
+
     render() {
         return (
             <Fragment>
                 <h1>Edit Post</h1>
                 <PostForm post={this.props.post} onSubmit={this.onSubmit} onBack={this.goBack} />
+                <button type="button" onClick={this.onRemove}>Remove Post</button>
             </Fragment>
         );
     };
@@ -29,7 +35,8 @@ const mapStateToProps = (state, props) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-    editPost: (id, post) => dispatch(startEditPost(id, post))
+    editPost: (id, post) => dispatch(startEditPost(id, post)),
+    removePost: (id) => dispatch(startRemovePost(id))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(EditPostPage);

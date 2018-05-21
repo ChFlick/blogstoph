@@ -1,7 +1,7 @@
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 
-import { startAddPost, addPost, startEditPost, editPost, startSetPosts, setPosts } from '../../src/actions/posts';
+import { startAddPost, addPost, startEditPost, editPost, startSetPosts, setPosts, startRemovePost, removePost } from '../../src/actions/posts';
 import { publishedPosts, privatePosts } from '../fixtures/posts';
 
 import database from '../../src/firebase/firebase';
@@ -215,5 +215,34 @@ describe('in startEditPost', () => {
 
             done();
         });
+    });
+});
+
+test('removePost should generate an action object', () => {
+    const id = 'test123';
+
+    expect(removePost(id)).toEqual({
+        type: 'REMOVE_POST',
+        id
+    });
+});
+
+test('startRemovePost should call removePost with the post id', (done) => {
+    const store = createMockStore({});
+    const post = {
+        id: 'test123',
+        title: 'test',
+        content: 'testC',
+        author: 'testA',
+        date: 200,
+        published: true
+    };
+
+    store.dispatch(startRemovePost(post)).then(() => {
+        const actions = store.getActions();
+        expect(actions.length).toBe(1);
+        expect(actions[0]).toEqual(removePost(post.id));
+
+        done();
     });
 });
