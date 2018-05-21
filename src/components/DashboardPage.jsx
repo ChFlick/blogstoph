@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 import PostList from './PostList';
 
 const DashboardPage = () => (
-    <div>
+    <Fragment>
         <h1>Dashboard</h1>
         <PostList />
-    </div>
+    </Fragment>
 );
 
 export default DashboardPage;

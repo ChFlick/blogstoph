@@ -19,7 +19,7 @@ exports[`should render Header correctly when logged in 1`] = `
           Blogstoph
         </h1>
       </Link>
-      <div>
+      <React.Fragment>
         <Link
           className="button button--link"
           replace={false}
@@ -33,7 +33,7 @@ exports[`should render Header correctly when logged in 1`] = `
         >
           Logout
         </button>
-      </div>
+      </React.Fragment>
     </div>
   </div>
 </header>

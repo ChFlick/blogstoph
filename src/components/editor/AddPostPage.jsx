@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 
 import { startAddPost } from '../../actions/posts';
@@ -12,10 +12,10 @@ export class AddPostPage extends React.Component {
 
     render() {
         return (
-            <div>
+            <Fragment>
                 <h1>Add Post</h1>
                 <PostForm onSubmit={this.onSubmit} />
-            </div>
+            </Fragment>
         );
     };
 };

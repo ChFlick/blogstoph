@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
@@ -14,10 +14,10 @@ export const Header = ({ isAuthenticated, startLogout }) => {
                         <h1>Blogstoph</h1>
                     </Link>
                     {isAuthenticated ? (
-                        <div>
+                        <Fragment>
                             <Link className="button button--link" to="/editor/dashboard">Editor Area</Link>
                             <button className="button button--link" onClick={startLogout}>Logout</button>
-                        </div>
+                        </Fragment>
                     ) : (
                         <Link className="button button--link" to="/login">Login</Link>
                     )}

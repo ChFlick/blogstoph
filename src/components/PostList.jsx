@@ -1,21 +1,21 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 
 export const PostList = (props) => (
-    <div>
+    <Fragment>
         {
             props.posts.length === 0 ? (
                 <p>There are no posts available</p>
             ) : (
                 props.posts.map((post) => (
-                    <div key={post.id}>
+                    <Fragment key={post.id}>
                         <h3>{post.title}</h3>
                         <p>{post.content}</p>
-                    </div>
+                    </Fragment>
                 ))
             )
         }
-    </div >
+    </Fragment>
 );
 
 const mapStateToProps = (state) => ({

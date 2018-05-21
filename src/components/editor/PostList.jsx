@@ -1,19 +1,20 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+
+import PostListItem from './PostListItem';
 
 export const PostList = (props) => (
-    <div>
+    <Fragment>
         {
             props.posts.length === 0 ? (
                 <p>There are no posts available</p>
             ) : (
                 props.posts.map((post) => (
-                    <Link to={`post/${post.id}`} key={post.id}>{post.title}<br/></Link>
+                    <PostListItem post={post} key={post.id} />
                 ))
             )
         }
-    </div >
+    </Fragment>
 );
 
 const mapStateToProps = (state) => ({

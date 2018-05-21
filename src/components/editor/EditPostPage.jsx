@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 
 import { startEditPost } from '../../actions/posts';
@@ -12,10 +12,10 @@ export class EditPostPage extends React.Component {
 
     render() {
         return (
-            <div>
+            <Fragment>
                 <h1>Edit Post</h1>
                 <PostForm post={this.props.post} onSubmit={this.onSubmit} />
-            </div>
+            </Fragment>
         );
     };
 };

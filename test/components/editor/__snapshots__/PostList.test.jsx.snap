@@ -1,38 +1,53 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`post list should render correctly with posts 1`] = `
-<div>
-  <Link
+<React.Fragment>
+  <PostListItem
     key="1"
-    replace={false}
-    to="post/1"
-  >
-    Some Title
-    <br />
-  </Link>
-  <Link
+    post={
+      Object {
+        "author": "Author of 1",
+        "content": "This is a Content of a Post...",
+        "date": 0,
+        "id": 1,
+        "published": true,
+        "title": "Some Title",
+      }
+    }
+  />
+  <PostListItem
     key="2"
-    replace={false}
-    to="post/2"
-  >
-    Some Title 2
-    <br />
-  </Link>
-  <Link
+    post={
+      Object {
+        "author": "Author of 2",
+        "content": "This is a second Content of a Post...",
+        "date": 1000,
+        "id": 2,
+        "published": true,
+        "title": "Some Title 2",
+      }
+    }
+  />
+  <PostListItem
     key="3"
-    replace={false}
-    to="post/3"
-  >
-    Some Title 3
-    <br />
-  </Link>
-</div>
+    post={
+      Object {
+        "author": "Author of 3",
+        "content": "This is a third Content of a Post...",
+        "date": 2000,
+        "id": 3,
+        "published": true,
+        "title": "Some Title 3",
+      }
+    }
+  />
+</React.Fragment>
 `;
 
 exports[`post list should render correctly without posts 1`] = `
-<div>
+<React.Fragment>
   <p>
     There are no posts available
   </p>
-</div>
+</React.Fragment>
 `;
