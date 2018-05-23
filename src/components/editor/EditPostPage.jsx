@@ -35,9 +35,24 @@ export class EditPostPage extends React.Component {
     render() {
         return (
             <Fragment>
-                <h1>Edit Post</h1>
-                <PostForm post={this.props.post} onSubmit={this.onSubmit} onBack={this.goBack} />
-                <button type="button" onClick={this.openModal}>Remove Post</button>
+                <div className="page-header">
+                    <div className="content-container">
+                        <h1 className="page-header__title">Edit Post</h1>
+                    </div>
+                </div>
+                <div className="content-container">
+                    <PostForm
+                        post={this.props.post}
+                        onSubmit={this.onSubmit}
+                        onBack={this.goBack} />
+                    <button
+                        className="button"
+                        type="button"
+                        onClick={this.openModal}
+                    >
+                        Remove Post
+                    </button>
+                </div>
 
                 <Modal
                     isOpen={this.state.modalIsOpen}

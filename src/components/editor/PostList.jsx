@@ -5,15 +5,20 @@ import PostListItem from './PostListItem';
 
 export const PostList = (props) => (
     <Fragment>
-        {
-            props.posts.length === 0 ? (
-                <p>There are no posts available</p>
-            ) : (
-                props.posts.map((post) => (
-                    <PostListItem post={post} key={post.id} />
-                ))
-            )
-        }
+        <div className="list-header">
+            <div>Blog posts</div>
+        </div>
+        <div className="list-body">
+            {
+                props.posts.length === 0 ? (
+                    <p className="list-item list-item--message">There are no posts available</p>
+                ) : (
+                        props.posts.map((post) => (
+                            <PostListItem post={post} key={post.id} />
+                        ))
+                    )
+            }
+        </div>
     </Fragment>
 );
 

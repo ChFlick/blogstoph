@@ -19,8 +19,7 @@
     border: 1px solid darken($off-white, 7%);
     border-top: none;
     color: $dark-grey;
-    display: flex;
-    flex-direction: column;
+    display: block;
     padding: $s-size;
     text-decoration: none;
     transition: background .3s ease;
@@ -54,12 +53,16 @@
 }
 
 .list-item__subtitle {
-    color: $grey;
+    color: $dark-grey;
     font-size: $font-size-small;
 }
 
 .list-item__data {
-    margin: $s-size 0 0 0;
+    color: $grey;
+    display: flex;
+    font-size: $font-size-small;
+    flex-flow: column;
+    text-align: right;
 
     @media (min-width: $desktop-breakpoint) {
         margin: 0;

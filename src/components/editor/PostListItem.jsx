@@ -3,13 +3,11 @@ import { Link } from 'react-router-dom';
 import moment from 'moment';
 
 const PostListItem = (props) => (
-    <div>
-        <Link to={`post/${props.post.id}`}>
-            <h3>{props.post.title}</h3>
-            <p>{props.post.content}</p>
-            <span>By {props.post.author} at {moment(props.post.date).format('DD.MM.YYYY')}</span>
-        </Link>
-    </div>
+    <Link className="list-item" to={`post/${props.post.id}`}>
+        <h3 className="list-item__title">{props.post.title}</h3>
+        <p className="list-item__subtitle">{props.post.content}</p>
+        <span className="list-item__data">By {props.post.author} at {moment(props.post.date).format('DD.MM.YYYY')}</span>
+    </Link>
 );
 
 export default PostListItem;
