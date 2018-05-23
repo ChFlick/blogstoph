@@ -2,12 +2,26 @@
 
 exports[`should render the add post page correctly 1`] = `
 <React.Fragment>
-  <h1>
-    Add Post
-  </h1>
-  <PostForm
-    onBack={[Function]}
-    onSubmit={[Function]}
-  />
+  <div
+    className="page-header"
+  >
+    <div
+      className="content-container"
+    >
+      <h1
+        className="page-header__title"
+      >
+        Add Post
+      </h1>
+    </div>
+  </div>
+  <div
+    className="content-container"
+  >
+    <PostForm
+      onBack={[Function]}
+      onSubmit={[Function]}
+    />
+  </div>
 </React.Fragment>
 `;

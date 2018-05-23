@@ -2,52 +2,76 @@
 
 exports[`post list should render correctly with posts 1`] = `
 <React.Fragment>
-  <PostListItem
-    key="1"
-    post={
-      Object {
-        "author": "Author of 1",
-        "content": "This is a Content of a Post...",
-        "date": 0,
-        "id": 1,
-        "published": true,
-        "title": "Some Title",
+  <div
+    className="list-header"
+  >
+    <div>
+      Blog posts
+    </div>
+  </div>
+  <div
+    className="list-body"
+  >
+    <PostListItem
+      key="1"
+      post={
+        Object {
+          "author": "Author of 1",
+          "content": "This is a Content of a Post...",
+          "date": 0,
+          "id": 1,
+          "published": true,
+          "title": "Some Title",
+        }
       }
-    }
-  />
-  <PostListItem
-    key="2"
-    post={
-      Object {
-        "author": "Author of 2",
-        "content": "This is a second Content of a Post...",
-        "date": 1000,
-        "id": 2,
-        "published": true,
-        "title": "Some Title 2",
+    />
+    <PostListItem
+      key="2"
+      post={
+        Object {
+          "author": "Author of 2",
+          "content": "This is a second Content of a Post...",
+          "date": 1000,
+          "id": 2,
+          "published": true,
+          "title": "Some Title 2",
+        }
       }
-    }
-  />
-  <PostListItem
-    key="3"
-    post={
-      Object {
-        "author": "Author of 3",
-        "content": "This is a third Content of a Post...",
-        "date": 2000,
-        "id": 3,
-        "published": true,
-        "title": "Some Title 3",
+    />
+    <PostListItem
+      key="3"
+      post={
+        Object {
+          "author": "Author of 3",
+          "content": "This is a third Content of a Post...",
+          "date": 2000,
+          "id": 3,
+          "published": true,
+          "title": "Some Title 3",
+        }
       }
-    }
-  />
+    />
+  </div>
 </React.Fragment>
 `;
 
 exports[`post list should render correctly without posts 1`] = `
 <React.Fragment>
-  <p>
-    There are no posts available
-  </p>
+  <div
+    className="list-header"
+  >
+    <div>
+      Blog posts
+    </div>
+  </div>
+  <div
+    className="list-body"
+  >
+    <p
+      className="list-item list-item--message"
+    >
+      There are no posts available
+    </p>
+  </div>
 </React.Fragment>
 `;

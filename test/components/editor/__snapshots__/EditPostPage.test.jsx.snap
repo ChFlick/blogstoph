@@ -2,19 +2,34 @@
 
 exports[`should render the add post page correctly 1`] = `
 <React.Fragment>
-  <h1>
-    Edit Post
-  </h1>
-  <PostForm
-    onBack={[Function]}
-    onSubmit={[Function]}
-  />
-  <button
-    onClick={[Function]}
-    type="button"
+  <div
+    className="page-header"
   >
-    Remove Post
-  </button>
+    <div
+      className="content-container"
+    >
+      <h1
+        className="page-header__title"
+      >
+        Edit Post
+      </h1>
+    </div>
+  </div>
+  <div
+    className="content-container"
+  >
+    <PostForm
+      onBack={[Function]}
+      onSubmit={[Function]}
+    />
+    <button
+      className="button"
+      onClick={[Function]}
+      type="button"
+    >
+      Remove Post
+    </button>
+  </div>
   <Modal
     ariaHideApp={true}
     bodyOpenClassName="ReactModal__Body--open"

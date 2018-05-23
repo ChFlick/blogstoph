@@ -2,15 +2,30 @@
 
 exports[`should render the dashboard page correctly 1`] = `
 <React.Fragment>
-  <h1>
-    Editor Dashboard
-  </h1>
-  <Connect(PostList) />
-  <Link
-    replace={false}
-    to="./add"
+  <div
+    className="page-header"
   >
-    Add Post
-  </Link>
+    <div
+      className="content-container"
+    >
+      <h1
+        className="page-header__title"
+      >
+        Care about your blog
+      </h1>
+    </div>
+  </div>
+  <div
+    className="content-container"
+  >
+    <Connect(PostList) />
+    <Link
+      className="button"
+      replace={false}
+      to="./add"
+    >
+      Add Post
+    </Link>
+  </div>
 </React.Fragment>
 `;
