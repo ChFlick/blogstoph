@@ -4,7 +4,13 @@ import PostList from './PostList';
 
 const DashboardPage = () => (
     <Fragment>
-        <h1>Dashboard</h1>
+        <div className="intro-header">
+            <div className="content-container">
+                <h1 className="intro-header__title">Blogstoph</h1>
+                <hr className="intro-header__bar"/>
+                <h2 className="intro-header__subtitle">Christoph Flicks IT blog</h2>
+            </div>
+        </div>
         <PostList />
     </Fragment>
 );
