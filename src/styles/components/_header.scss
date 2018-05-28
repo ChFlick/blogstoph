@@ -1,5 +1,8 @@
 .header {
-    background: $title-color;
+    height: 7.4rem;
+    left: 0;
+    position: fixed;
+    right: 0;
 }
 
 .header__content {
@@ -7,12 +10,38 @@
     display: flex;
     justify-content: space-between;
     padding: $s-size 0;
+    * {
+        color: inherit;
+    }
 }
 
 .header__title {
-    color: white;
-    text-decoration: none;
     h1 {
+        font-size: $font-size-xlarge;
         margin: 0;
     }
+    text-decoration: none;
+}
+
+.header--fixed-top {
+    color: $title-color !important;
+    transition: background-color 500ms, opacity 500ms;
+    position: absolute;
+}
+
+.header--fixed {
+    background: $off-white;
+    border-bottom: 1px solid darken($off-white, 10);
+    color: $text-dark !important;
+    left: 0;
+    opacity: 0.7;
+    position: fixed;
+    transition: top 300ms;
+    top: -7.4rem;
+    right: 0;
+}
+
+.header--visible {
+    top: 0;
+    transition: top 300ms;
 }

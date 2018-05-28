@@ -2,7 +2,9 @@
 
 exports[`should render Header correctly when logged in 1`] = `
 <header
-  className="header"
+  className="header header--fixed-top"
+  id="header"
+  onScroll={[Function]}
 >
   <div
     className="content-container"
@@ -21,14 +23,14 @@ exports[`should render Header correctly when logged in 1`] = `
       </Link>
       <div>
         <Link
-          className="button button--link"
+          className="button button--link button--header"
           replace={false}
           to="/editor/dashboard"
         >
           Editor Area
         </Link>
         <button
-          className="button button--link"
+          className="button button--link button--header"
           onClick={[Function]}
         >
           Logout
@@ -41,7 +43,9 @@ exports[`should render Header correctly when logged in 1`] = `
 
 exports[`should render Header correctly when logged out 1`] = `
 <header
-  className="header"
+  className="header header--fixed-top"
+  id="header"
+  onScroll={[Function]}
 >
   <div
     className="content-container"
