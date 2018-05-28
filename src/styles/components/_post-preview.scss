@@ -1,0 +1,30 @@
+.post-preview {
+    margin: $m-size 0 $l-size 0;
+}
+
+.post-preview__data {
+    color: $grey;
+    font-family: 'Lora', 'Times New Roman', serif;
+    font-size: $font-size-large;
+    font-style: italic;
+    margin: 0;
+}
+
+.post-preview__separator {
+    border: 0;
+    border-top: 1px solid $light-grey;
+    margin: 0;
+}
+
+.post-preview__subtitle {
+    color: $text-dark;
+    font-size: $font-size-xlarge;
+    font-weight: 300;
+    margin: 0 0 $s-size 0;
+}
+
+.post-preview__title {
+    color: $text-dark;
+    font-size: $font-size-preview-title;
+    margin: 0;
+}
