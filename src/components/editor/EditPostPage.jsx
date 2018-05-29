@@ -32,38 +32,49 @@ export class EditPostPage extends React.Component {
         this.goBack();
     };
 
+    pageHeader = (
+        <div className="page-header">
+            <div className="content-container">
+                <h1 className="page-header__title">Edit Post</h1>
+            </div>
+        </div>
+    );
+
+    createPageContent = () => (
+        <div className="content-container">
+            <PostForm
+                post={this.props.post}
+                onSubmit={this.onSubmit}
+                onBack={this.goBack} />
+            <button
+                className="button"
+                type="button"
+                onClick={this.openModal}
+            >
+                Remove Post
+            </button>
+        </div>
+    );
+
+    createModal = () => (
+        <Modal
+            isOpen={this.state.modalIsOpen}
+            onRequestClose={this.closeModal}
+            contentLabel="Remove Post"
+        >
+            <h2>Remove Post</h2>
+            <p>Are you sure you want to remove the post?</p>
+            <button onClick={this.closeModal}>Cancel</button>
+            <button onClick={this.onRemove}>Ok</button>
+        </Modal>
+    );
+
     render() {
         return (
             <Fragment>
-                <div className="page-header">
-                    <div className="content-container">
-                        <h1 className="page-header__title">Edit Post</h1>
-                    </div>
-                </div>
-                <div className="content-container">
-                    <PostForm
-                        post={this.props.post}
-                        onSubmit={this.onSubmit}
-                        onBack={this.goBack} />
-                    <button
-                        className="button"
-                        type="button"
-                        onClick={this.openModal}
-                    >
-                        Remove Post
-                    </button>
-                </div>
-
-                <Modal
-                    isOpen={this.state.modalIsOpen}
-                    onRequestClose={this.closeModal}
-                    contentLabel="Remove Post"
-                >
-                    <h2>Remove Post</h2>
-                    <p>Are you sure you want to remove the post?</p>
-                    <button onClick={this.closeModal}>Cancel</button>
-                    <button onClick={this.onRemove}>Ok</button>
-                </Modal>
+                {this.pageHeader}
+                {this.createPageContent()}
+                {this.createModal()}
             </Fragment>
         );
     };
