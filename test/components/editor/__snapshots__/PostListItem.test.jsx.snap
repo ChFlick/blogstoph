@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render the PostListItem correctly 1`] = `
+<Link
+  className="list-item"
+  replace={false}
+  to="post/1"
+>
+  <h3
+    className="list-item__title"
+  >
+    Some Title
+  </h3>
+  <p
+    className="list-item__subtitle"
+  >
+    This is a Content of a Post...
+  </p>
+  <span
+    className="list-item__data"
+  >
+    By 
+    Author of 1
+     at 
+    01.01.1970
+  </span>
+</Link>
+`;
