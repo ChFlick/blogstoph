@@ -24,19 +24,25 @@ export class Header extends React.Component {
         const scrollPos = window.scrollY;
         let headerClasses = 'header header--fixed-top';
 
-        if (scrollPos > 80){
+        if (scrollPos > 80) {
             headerClasses = 'header header--fixed';
             if (scrollPos < scrollPosPrev) {
                 headerClasses += ' header--visible';
             }
 
             this.setState(() => ({ headerClasses }));
-        } else if (scrollPos === 0){
+        } else if (scrollPos === 0) {
             this.setState(() => ({ headerClasses: DEFAULT_HEADER_CLASSES }));
         }
 
         this.setState(() => ({ scrollPos }));
     };
+
+    createAreaSwitchButton = () =>
+        this.props.private ?
+            <Link className="button button--link button--header" to="/dashboard">Visitor Area</Link> :
+            <Link className="button button--link button--header" to="/editor/dashboard">Editor Area</Link>;
+
 
     render() {
         return (
@@ -48,7 +54,7 @@ export class Header extends React.Component {
                         </Link>
                         {this.props.isAuthenticated ? (
                             <div>
-                                <Link className="button button--link button--header" to="/editor/dashboard">Editor Area</Link>
+                                {this.createAreaSwitchButton()}
                                 <button className="button button--link button--header" onClick={this.props.startLogout}>Logout</button>
                             </div>
                         ) : (
