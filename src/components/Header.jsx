@@ -12,14 +12,14 @@ export class Header extends React.Component {
     }
 
     componentDidMount = () => {
-        window.addEventListener('scroll', this.handleScroll);
+        window.addEventListener('scroll', this.onScroll);
     };
 
     componentWillUnmount = () => {
-        window.removeEventListener('scroll', this.handleScroll);
+        window.removeEventListener('scroll', this.onScroll);
     };
 
-    handleScroll = () => {
+    onScroll = () => {
         const scrollPosPrev = this.state.scrollPos;
         const scrollPos = window.scrollY;
         let headerClasses = 'header header--fixed-top';
@@ -46,7 +46,7 @@ export class Header extends React.Component {
 
     render() {
         return (
-            <header id="header" className={this.state.headerClasses} onScroll={this.handleScroll}>
+            <header id="header" className={this.state.headerClasses} onScroll={this.onScroll}>
                 <div className="content-container">
                     <div className="header__content">
                         <Link className="header__title" to="/dashboard">

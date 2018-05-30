@@ -41,6 +41,47 @@ exports[`should render Header correctly when logged in 1`] = `
 </header>
 `;
 
+exports[`should render Header correctly when logged in in private area 1`] = `
+<header
+  className="header header--fixed-top"
+  id="header"
+  onScroll={[Function]}
+>
+  <div
+    className="content-container"
+  >
+    <div
+      className="header__content"
+    >
+      <Link
+        className="header__title"
+        replace={false}
+        to="/dashboard"
+      >
+        <h1>
+          Blogstoph
+        </h1>
+      </Link>
+      <div>
+        <Link
+          className="button button--link button--header"
+          replace={false}
+          to="/dashboard"
+        >
+          Visitor Area
+        </Link>
+        <button
+          className="button button--link button--header"
+          onClick={[Function]}
+        >
+          Logout
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+`;
+
 exports[`should render Header correctly when logged out 1`] = `
 <header
   className="header header--fixed-top"
