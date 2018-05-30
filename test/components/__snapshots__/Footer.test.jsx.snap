@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Footer correctly 1`] = `
+<React.Fragment>
+  <hr
+    className="bar--light-grey"
+  />
+  <div
+    className="copyright"
+  >
+    Copyright © Christoph Flick 2018
+  </div>
+</React.Fragment>
+`;

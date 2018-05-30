@@ -30,7 +30,7 @@ exports[`post list should render correctly with posts 1`] = `
       </span>
     </div>
     <hr
-      className="post-preview__separator"
+      className="bar--light-grey"
     />
   </React.Fragment>
   <React.Fragment
@@ -59,7 +59,7 @@ exports[`post list should render correctly with posts 1`] = `
       </span>
     </div>
     <hr
-      className="post-preview__separator"
+      className="bar--light-grey"
     />
   </React.Fragment>
   <React.Fragment

@@ -23,7 +23,7 @@ export const PostList = (props) => (
                                     Posted by {post.author} at {moment(post.date).format('DD. MMM YYYY')}
                                 </span>
                             </div>
-                            {isNotLastElement(index, props.posts.length) && <hr className="post-preview__separator" />}
+                            {isNotLastElement(index, props.posts.length) && <hr className="bar--light-grey" />}
                         </Fragment>
                     )
                 )
