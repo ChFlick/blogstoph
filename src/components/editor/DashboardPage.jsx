@@ -11,8 +11,8 @@ const EditorDashboardPage = () => (
             </div>
         </div>
         <div className="content-container">
+            <Link className="button button--fullsize" to="./add">Add Post</Link>
             <PostList />
-            <Link className="button" to="./add">Add Post</Link>
         </div>
     </Fragment>
 );
