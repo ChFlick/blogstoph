@@ -14,9 +14,11 @@ export const PostPage = ({post}) => (
                 </h3>
             </div>
         </div>
-        <Remarkable>
-            {post.content}
-        </Remarkable>
+        <div className="content-container">
+            <Remarkable>
+                {post.content}
+            </Remarkable>
+        </div>
     </Fragment>
 );
 

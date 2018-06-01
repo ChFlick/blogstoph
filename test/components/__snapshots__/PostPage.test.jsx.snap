@@ -26,11 +26,15 @@ exports[`should render one post page correctly 1`] = `
       </h3>
     </div>
   </div>
-  <Remarkable
-    container="div"
-    options={Object {}}
+  <div
+    className="content-container"
   >
-    This is a Content of a Post...
-  </Remarkable>
+    <Remarkable
+      container="div"
+      options={Object {}}
+    >
+      This is a Content of a Post...
+    </Remarkable>
+  </div>
 </React.Fragment>
 `;
