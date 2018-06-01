@@ -1,8 +1,20 @@
-.post-preview {
+.post-preview-item {
     margin: $m-size 0 $l-size 0;
+
+    a {
+        text-decoration: none;
+    }
 }
 
-.post-preview__data {
+.post-preview-item__link {
+    color: $text-dark;
+    
+    &:hover {
+        color: $hover-blue;
+    }
+}
+
+.post-preview-item__data {
     color: $grey;
     font-family: 'Lora', 'Times New Roman', serif;
     font-size: $font-size-large;
@@ -10,21 +22,19 @@
     margin: 0;
 }
 
-.post-preview__separator {
+.post-preview-item__separator {
     border: 0;
     border-top: 1px solid $light-grey;
     margin: 0;
 }
 
-.post-preview__subtitle {
-    color: $text-dark;
+.post-preview-item__subtitle {
     font-size: $font-size-xlarge;
     font-weight: 300;
     margin: 0 0 $s-size 0;
 }
 
-.post-preview__title {
-    color: $text-dark;
+.post-preview-item__title {
     font-size: $font-size-preview-title;
     margin: 0;
 }
