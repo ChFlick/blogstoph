@@ -7,28 +7,18 @@ exports[`post list should render correctly with posts 1`] = `
   <React.Fragment
     key="1"
   >
-    <div
-      className="post-preview"
-    >
-      <h3
-        className="post-preview__title"
-      >
-        Some Title
-      </h3>
-      <p
-        className="post-preview__subtitle"
-      >
-        This is a Content of a Post...
-      </p>
-      <span
-        className="post-preview__data"
-      >
-        Posted by 
-        Author of 1
-         at 
-        01. Jan 1970
-      </span>
-    </div>
+    <PostListItem
+      post={
+        Object {
+          "author": "Author of 1",
+          "content": "This is a Content of a Post...",
+          "date": 0,
+          "id": 1,
+          "published": true,
+          "title": "Some Title",
+        }
+      }
+    />
     <hr
       className="bar--light-grey"
     />
@@ -36,28 +26,18 @@ exports[`post list should render correctly with posts 1`] = `
   <React.Fragment
     key="2"
   >
-    <div
-      className="post-preview"
-    >
-      <h3
-        className="post-preview__title"
-      >
-        Some Title 2
-      </h3>
-      <p
-        className="post-preview__subtitle"
-      >
-        This is a second Content of a Post...
-      </p>
-      <span
-        className="post-preview__data"
-      >
-        Posted by 
-        Author of 2
-         at 
-        01. Jan 1970
-      </span>
-    </div>
+    <PostListItem
+      post={
+        Object {
+          "author": "Author of 2",
+          "content": "This is a second Content of a Post...",
+          "date": 1000,
+          "id": 2,
+          "published": true,
+          "title": "Some Title 2",
+        }
+      }
+    />
     <hr
       className="bar--light-grey"
     />
@@ -65,28 +45,18 @@ exports[`post list should render correctly with posts 1`] = `
   <React.Fragment
     key="3"
   >
-    <div
-      className="post-preview"
-    >
-      <h3
-        className="post-preview__title"
-      >
-        Some Title 3
-      </h3>
-      <p
-        className="post-preview__subtitle"
-      >
-        This is a third Content of a Post...
-      </p>
-      <span
-        className="post-preview__data"
-      >
-        Posted by 
-        Author of 3
-         at 
-        01. Jan 1970
-      </span>
-    </div>
+    <PostListItem
+      post={
+        Object {
+          "author": "Author of 3",
+          "content": "This is a third Content of a Post...",
+          "date": 2000,
+          "id": 3,
+          "published": true,
+          "title": "Some Title 3",
+        }
+      }
+    />
   </React.Fragment>
 </div>
 `;

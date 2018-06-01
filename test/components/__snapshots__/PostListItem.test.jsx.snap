@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`post list should render correctly 1`] = `
+<React.Fragment>
+  <Link
+    className="post-preview"
+    replace={false}
+    to="post/1"
+  >
+    <h3
+      className="post-preview__title"
+    >
+      Some Title
+    </h3>
+    <p
+      className="post-preview__subtitle"
+    >
+      This is a Content of a Post...
+    </p>
+  </Link>
+  <span
+    className="post-preview__data"
+  >
+    Posted by 
+    Author of 1
+     at 
+    01. Jan 1970
+  </span>
+</React.Fragment>
+`;
