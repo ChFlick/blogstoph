@@ -6,14 +6,38 @@
     text-align: center;
 }
 
-.page-header__actions {
-    margin-top: $m-size;
+.page-header__title { 
+    margin: 0;
 }
 
-.page-header__title { 
+.page-header__title--xl {
+    font-size: 6.4rem;
+    font-weight: 700;
+}
+
+.page-header__title--l {
+    font-size: 5rem;
+    font-weight: 600;
+}
+
+.page-header__title--m {
     font-weight: 300;
     margin: 0;
     span {
         font-weight: 700;
     }
+}
+
+.page-header__subtitle { 
+    font-size: $font-size-xlarge;
+    font-weight: 300;
+    margin-top: $m-size;
+}
+
+.page-header__bar { 
+    border: 0;
+    border-top: 1px solid $off-white;
+    border-width: 4px;
+    margin: 15px auto;
+    max-width: 100px;
 }

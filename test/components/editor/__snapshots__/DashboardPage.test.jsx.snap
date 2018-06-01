@@ -9,7 +9,7 @@ exports[`should render the dashboard page correctly 1`] = `
       className="content-container"
     >
       <h1
-        className="page-header__title"
+        className="page-header__title page-header__title--m"
       >
         Care about your blog
       </h1>

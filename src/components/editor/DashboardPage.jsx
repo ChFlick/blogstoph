@@ -7,7 +7,7 @@ const EditorDashboardPage = () => (
     <Fragment>
         <div className="page-header">
             <div className="content-container">
-                <h1 className="page-header__title">Care about your blog</h1>
+                <h1 className="page-header__title page-header__title--m">Care about your blog</h1>
             </div>
         </div>
         <div className="content-container">

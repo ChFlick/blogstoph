@@ -4,10 +4,10 @@ import { connect } from 'react-redux';
 
 export const PostPage = ({post}) => (
     <Fragment>
-        <div className="intro-header">
+        <div className="page-header">
             <div className="content-container">
-                <h1 className="intro-header__title">{post.title}</h1>
-                <h2 className="intro-header__subtitle"></h2>
+                <h1 className="page-header__title page-header__title--xl">{post.title}</h1>
+                <h2 className="page-header__subtitle"></h2>
             </div>
         </div>
         <Remarkable>
