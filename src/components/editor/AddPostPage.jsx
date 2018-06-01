@@ -19,7 +19,7 @@ export class AddPostPage extends React.Component {
             <Fragment>
                 <div className="page-header">
                     <div className="content-container">
-                        <h1 className="page-header__title page-header__title--m">Add Post</h1>
+                        <h1 className="page-header__title ">Add Post</h1>
                     </div>
                 </div>
                 <div className="content-container">

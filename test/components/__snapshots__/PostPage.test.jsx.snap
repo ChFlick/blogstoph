@@ -6,16 +6,24 @@ exports[`should render one post page correctly 1`] = `
     className="page-header"
   >
     <div
-      className="content-container"
+      className="content-container align-left"
     >
       <h1
-        className="page-header__title page-header__title--xl"
+        className="page-header__title page-header__title--l"
       >
         Some Title
       </h1>
       <h2
         className="page-header__subtitle"
       />
+      <h3
+        className="page-header__info"
+      >
+        Posted by 
+        Author of 1
+         on 
+        01. Jan 1970
+      </h3>
     </div>
   </div>
   <Remarkable

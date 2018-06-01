@@ -35,7 +35,7 @@ export class EditPostPage extends React.Component {
     pageHeader = (
         <div className="page-header">
             <div className="content-container">
-                <h1 className="page-header__title page-header__title--m">Edit Post</h1>
+                <h1 className="page-header__title ">Edit Post</h1>
             </div>
         </div>
     );

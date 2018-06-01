@@ -21,7 +21,7 @@ exports[`should render the PostListItem correctly 1`] = `
   >
     By 
     Author of 1
-     at 
+     on 
     01.01.1970
   </span>
 </Link>

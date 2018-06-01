@@ -9,7 +9,7 @@ const PostListItem = (props) => (
             <p className="post-preview-item__subtitle">{props.post.content}</p>
         </Link>
         <span className="post-preview-item__data">
-            Posted by {props.post.author} at {moment(props.post.date).format('DD. MMM YYYY')}
+            Posted by {props.post.author} on {moment(props.post.date).format('DD. MMM YYYY')}
         </span>
     </div>
 );
