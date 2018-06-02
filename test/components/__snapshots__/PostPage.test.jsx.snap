@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render one post page correctly 1`] = `
-<React.Fragment>
-  <div
+<article>
+  <header
     className="page-header"
   >
     <div
@@ -16,25 +16,23 @@ exports[`should render one post page correctly 1`] = `
       <h2
         className="page-header__subtitle"
       />
-      <h3
+      <p
         className="page-header__info"
       >
         Posted by 
         Author of 1
          on 
-        01. Jan 1970
-      </h3>
+        <time>
+          01. Jan 1970
+        </time>
+      </p>
     </div>
-  </div>
-  <div
-    className="content-container"
+  </header>
+  <Remarkable
+    container="section"
+    options={Object {}}
   >
-    <Remarkable
-      container="div"
-      options={Object {}}
-    >
-      This is a Content of a Post...
-    </Remarkable>
-  </div>
-</React.Fragment>
+    This is a Content of a Post...
+  </Remarkable>
+</article>
 `;

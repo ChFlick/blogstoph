@@ -17,14 +17,14 @@ export class AddPostPage extends React.Component {
     render() {
         return (
             <Fragment>
-                <div className="page-header">
+                <header className="page-header">
                     <div className="content-container">
                         <h1 className="page-header__title ">Add Post</h1>
                     </div>
-                </div>
-                <div className="content-container">
+                </header>
+                <section className="content-container">
                     <PostForm onSubmit={this.onSubmit} onBack={this.goBack} />
-                </div>
+                </section>
             </Fragment>
         );
     };

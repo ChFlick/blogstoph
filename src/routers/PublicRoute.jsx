@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import { Route } from 'react-router-dom';
 
@@ -12,11 +12,13 @@ export const PublicRoute = ({
 }) => {
     return (
         <Route {...rest} component={(props) => (
-            <div>
+            <Fragment>
                 <Header />
-                <Component {...props} />
+                    <main>
+                        <Component {...props} />
+                    </main>
                 <Footer />
-            </div>
+            </Fragment>
         )} />
     );
 };

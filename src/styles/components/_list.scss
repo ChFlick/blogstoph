@@ -49,11 +49,13 @@
 }
 
 .list-item__title {
+    font-size: $font-size-large;
     margin: 0;
     word-break: break-all;
 }
 
 .list-item__subtitle {
+    font-weight: normal;
     color: $dark-grey;
     font-size: $font-size-small;
 }
@@ -61,7 +63,10 @@
 .list-item__data {
     color: $grey;
     display: flex;
+    font-family: 'Lora', 'Times New Roman', serif;
     font-size: $font-size-small;
+    font-style: italic;
+    font-weight: 300;
     flex-flow: column;
     text-align: right;
 

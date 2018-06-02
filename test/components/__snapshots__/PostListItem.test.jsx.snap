@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`post list should render correctly 1`] = `
-<div
+<section
   className="post-preview-item"
 >
   <Link
@@ -9,24 +9,24 @@ exports[`post list should render correctly 1`] = `
     replace={false}
     to="post/1"
   >
-    <h3
+    <h1
       className="post-preview-item__title"
     >
       Some Title
-    </h3>
-    <p
+    </h1>
+    <h2
       className="post-preview-item__subtitle"
     >
       This is a Content of a Post...
-    </p>
+    </h2>
   </Link>
-  <span
+  <p
     className="post-preview-item__data"
   >
     Posted by 
     Author of 1
      on 
     01. Jan 1970
-  </span>
-</div>
+  </p>
+</section>
 `;

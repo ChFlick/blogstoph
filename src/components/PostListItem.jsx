@@ -3,15 +3,15 @@ import { Link } from 'react-router-dom';
 import moment from 'moment';
 
 const PostListItem = (props) => (
-    <div className="post-preview-item">
+    <section className="post-preview-item">
         <Link className="post-preview-item__link" to={`post/${props.post.id}`} >
-            <h3 className="post-preview-item__title">{props.post.title}</h3>
-            <p className="post-preview-item__subtitle">{props.post.content}</p>
+            <h1 className="post-preview-item__title">{props.post.title}</h1>
+            <h2 className="post-preview-item__subtitle">{props.post.content}</h2>
         </Link>
-        <span className="post-preview-item__data">
+        <p className="post-preview-item__data">
             Posted by {props.post.author} on {moment(props.post.date).format('DD. MMM YYYY')}
-        </span>
-    </div>
+        </p>
+    </section>
 );
 
 export default PostListItem;

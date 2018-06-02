@@ -53,10 +53,10 @@ export class Header extends React.Component {
                             <h1>Blogstoph</h1>
                         </Link>
                         {this.props.isAuthenticated ? (
-                            <div>
+                            <nav>
                                 {this.createAreaSwitchButton()}
                                 <button className="button button--link button--header" onClick={this.props.startLogout}>Logout</button>
-                            </div>
+                            </nav>
                         ) : (
                                 <Link className="button button--link" to="/login">Login</Link>
                             )}

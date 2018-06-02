@@ -21,7 +21,7 @@ exports[`should render Header correctly when logged in 1`] = `
           Blogstoph
         </h1>
       </Link>
-      <div>
+      <nav>
         <Link
           className="button button--link button--header"
           replace={false}
@@ -35,7 +35,7 @@ exports[`should render Header correctly when logged in 1`] = `
         >
           Logout
         </button>
-      </div>
+      </nav>
     </div>
   </div>
 </header>
@@ -62,7 +62,7 @@ exports[`should render Header correctly when logged in in private area 1`] = `
           Blogstoph
         </h1>
       </Link>
-      <div>
+      <nav>
         <Link
           className="button button--link button--header"
           replace={false}
@@ -76,7 +76,7 @@ exports[`should render Header correctly when logged in in private area 1`] = `
         >
           Logout
         </button>
-      </div>
+      </nav>
     </div>
   </div>
 </header>

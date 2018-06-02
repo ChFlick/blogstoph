@@ -33,15 +33,15 @@ export class EditPostPage extends React.Component {
     };
 
     pageHeader = (
-        <div className="page-header">
+        <header className="page-header">
             <div className="content-container">
                 <h1 className="page-header__title ">Edit Post</h1>
             </div>
-        </div>
+        </header>
     );
 
     createPageContent = () => (
-        <div className="content-container">
+        <section className="content-container">
             <PostForm
                 post={this.props.post}
                 onSubmit={this.onSubmit}
@@ -53,7 +53,7 @@ export class EditPostPage extends React.Component {
             >
                 Remove Post
             </button>
-        </div>
+        </section>
     );
 
     createModal = () => (
@@ -62,10 +62,12 @@ export class EditPostPage extends React.Component {
             onRequestClose={this.closeModal}
             contentLabel="Remove Post"
         >
-            <h2>Remove Post</h2>
-            <p>Are you sure you want to remove the post?</p>
-            <button onClick={this.closeModal}>Cancel</button>
-            <button onClick={this.onRemove}>Ok</button>
+            <section>
+                <h2>Remove Post</h2>
+                <p>Are you sure you want to remove the post?</p>
+                <button onClick={this.closeModal}>Cancel</button>
+                <button onClick={this.onRemove}>Ok</button>
+            </section>
         </Modal>
     );
 

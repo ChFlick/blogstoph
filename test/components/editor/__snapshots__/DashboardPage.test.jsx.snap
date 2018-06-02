@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render the dashboard page correctly 1`] = `
-<React.Fragment>
-  <div
+<section>
+  <header
     className="page-header"
   >
     <div
@@ -14,7 +14,7 @@ exports[`should render the dashboard page correctly 1`] = `
         Care about your blog
       </h1>
     </div>
-  </div>
+  </header>
   <div
     className="content-container"
   >
@@ -27,5 +27,5 @@ exports[`should render the dashboard page correctly 1`] = `
     </Link>
     <Connect(PostList) />
   </div>
-</React.Fragment>
+</section>
 `;

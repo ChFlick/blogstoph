@@ -1,10 +1,10 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
 const Footer = (props) => (
-    <Fragment>
+    <footer>
         <hr className="bar--light-grey" />
         <div className="copyright">Copyright © Christoph Flick 2018</div>
-    </Fragment>
+    </footer>
 );
 
 export default Footer;

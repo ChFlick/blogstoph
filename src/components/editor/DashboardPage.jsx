@@ -1,20 +1,20 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 import PostList from './PostList';
 
 const EditorDashboardPage = () => (
-    <Fragment>
-        <div className="page-header">
+    <section>
+        <header className="page-header">
             <div className="content-container">
                 <h1 className="page-header__title ">Care about your blog</h1>
             </div>
-        </div>
+        </header>
         <div className="content-container">
             <Link className="button button--fullsize" to="./add">Add Post</Link>
             <PostList />
         </div>
-    </Fragment>
+    </section>
 );
 
 export default EditorDashboardPage;

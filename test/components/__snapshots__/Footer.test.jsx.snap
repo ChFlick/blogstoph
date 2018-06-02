@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render Footer correctly 1`] = `
-<React.Fragment>
+<footer>
   <hr
     className="bar--light-grey"
   />
@@ -10,5 +10,5 @@ exports[`should render Footer correctly 1`] = `
   >
     Copyright © Christoph Flick 2018
   </div>
-</React.Fragment>
+</footer>
 `;

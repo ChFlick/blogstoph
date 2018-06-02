@@ -2,7 +2,7 @@
 
 exports[`should render the add post page correctly 1`] = `
 <React.Fragment>
-  <div
+  <header
     className="page-header"
   >
     <div
@@ -14,14 +14,14 @@ exports[`should render the add post page correctly 1`] = `
         Add Post
       </h1>
     </div>
-  </div>
-  <div
+  </header>
+  <section
     className="content-container"
   >
     <PostForm
       onBack={[Function]}
       onSubmit={[Function]}
     />
-  </div>
+  </section>
 </React.Fragment>
 `;
