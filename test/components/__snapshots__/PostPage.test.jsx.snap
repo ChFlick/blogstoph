@@ -31,16 +31,14 @@ exports[`should render one post page correctly 1`] = `
   <ReactMarkdown
     astPlugins={Array []}
     className="content-container"
-    container="section"
     escapeHtml={true}
     plugins={Array []}
     rawSourcePos={false}
     renderers={Object {}}
     skipHtml={false}
+    source="This is a Content of a Post..."
     sourcePos={false}
     transformLinkUri={[Function]}
-  >
-    This is a Content of a Post...
-  </ReactMarkdown>
+  />
 </article>
 `;
