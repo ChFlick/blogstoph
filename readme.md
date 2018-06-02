@@ -5,12 +5,13 @@
 [![codecov](https://codecov.io/gh/ChFlick/blogstoph/branch/master/graph/badge.svg)](https://codecov.io/gh/ChFlick/blogstoph)
 
 A simple blog / blogging app, built in react.
-
-Created to dive deeper into react development.
+It was created so I could dive deeper into react development.
 
 The app can be seen live at <https://blogstoph.herokuapp.com/>
 
 If you have any ideas or comments feel free to contact me.
+
+[Roadmap](./roadmap.md)
 
 ## Running the App
 
