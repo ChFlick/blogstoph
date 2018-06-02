@@ -1,6 +1,6 @@
 import React from 'react';
 import moment from 'moment';
-import Markdown from 'react-remarkable';
+import Markdown from 'react-markdown';
 import { SingleDatePicker } from 'react-dates';
 
 class PostForm extends React.Component {

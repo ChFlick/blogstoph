@@ -1,9 +1,9 @@
 import React from 'react';
-import Markdown from 'react-remarkable';
+import Markdown from 'react-markdown';
 import { connect } from 'react-redux';
 import moment from 'moment';
 
-export const PostPage = ({post}) => (
+export const PostPage = ({ post }) => (
     <article>
         <header className="page-header">
             <div className="content-container align-left">
@@ -14,9 +14,10 @@ export const PostPage = ({post}) => (
                 </p>
             </div>
         </header>
-        <Markdown container="section">
-            {post.content}
-        </Markdown>
+        <Markdown
+            source={post.content}
+            className="content-container"
+        />
     </article>
 );
 

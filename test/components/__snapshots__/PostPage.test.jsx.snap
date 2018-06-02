@@ -28,11 +28,19 @@ exports[`should render one post page correctly 1`] = `
       </p>
     </div>
   </header>
-  <Remarkable
+  <ReactMarkdown
+    astPlugins={Array []}
+    className="content-container"
     container="section"
-    options={Object {}}
+    escapeHtml={true}
+    plugins={Array []}
+    rawSourcePos={false}
+    renderers={Object {}}
+    skipHtml={false}
+    sourcePos={false}
+    transformLinkUri={[Function]}
   >
     This is a Content of a Post...
-  </Remarkable>
+  </ReactMarkdown>
 </article>
 `;

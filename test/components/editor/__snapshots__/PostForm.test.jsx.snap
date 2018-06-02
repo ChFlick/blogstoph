@@ -19,10 +19,16 @@ exports[`renders the post form correctly 1`] = `
     type="text"
     value=""
   />
-  <Remarkable
-    container="div"
-    options={Object {}}
+  <ReactMarkdown
+    astPlugins={Array []}
+    escapeHtml={true}
+    plugins={Array []}
+    rawSourcePos={false}
+    renderers={Object {}}
+    skipHtml={false}
     source=""
+    sourcePos={false}
+    transformLinkUri={[Function]}
   />
   <input
     className="text-input"
