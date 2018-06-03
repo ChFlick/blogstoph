@@ -24,7 +24,7 @@ export class EditPostPage extends React.Component {
     };
 
     onSubmit = (post) => {
-        this.props.editPost(this.props.match.params.id, post);
+        this.props.editPost(this.props.post.id, post);
         this.goBack();
     };
 

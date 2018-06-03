@@ -17,20 +17,20 @@ test('should render the post form', () => {
 
 describe('onSubmit', () => {
     test('should edit the post', () => {
-        const match = { params: { id: 'ID' } };
-        const post = { test: 'test' };
+        const post = { id: 'ID' };
+        const editedPost = { test: 'test' };
         const editPostSpy = jest.fn();
-        const wrapper = shallow(<EditPostPage match={match} editPost={editPostSpy} history={{ push: jest.fn() }} />);
+        const wrapper = shallow(<EditPostPage post={post} editPost={editPostSpy} history={{ push: jest.fn() }} />);
 
-        wrapper.find(PostForm).prop('onSubmit')(post);
+        wrapper.find(PostForm).prop('onSubmit')(editedPost);
 
-        expect(editPostSpy).toHaveBeenCalledWith(match.params.id, post);
+        expect(editPostSpy).toHaveBeenCalledWith(post.id, editedPost);
     });
 
     test('should redirect the user', () => {
-        const match = { params: { id: 'ID' } };
+        const post = { id: 'ID' };
         const historyPushSpy = jest.fn();
-        const wrapper = shallow(<EditPostPage match={match} editPost={jest.fn()} history={{ push: historyPushSpy }} />);
+        const wrapper = shallow(<EditPostPage post={post} editPost={jest.fn()} history={{ push: historyPushSpy }} />);
 
         wrapper.find(PostForm).prop('onSubmit')();
 
