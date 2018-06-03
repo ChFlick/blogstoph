@@ -17,7 +17,7 @@ exports[`post list should render correctly 1`] = `
     <h2
       className="post-preview-item__subtitle"
     >
-      This is a Content of a Post...
+      A great subtitle
     </h2>
   </Link>
   <p

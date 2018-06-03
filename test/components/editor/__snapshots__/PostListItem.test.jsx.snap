@@ -15,7 +15,7 @@ exports[`should render the PostListItem correctly 1`] = `
     <h2
       className="list-item__subtitle"
     >
-      This is a Content of a Post...
+      A great subtitle
     </h2>
     <p
       className="list-item__data"
