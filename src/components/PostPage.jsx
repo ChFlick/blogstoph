@@ -8,7 +8,7 @@ export const PostPage = ({ post }) => (
         <header className="page-header">
             <div className="content-container align-left">
                 <h1 className="page-header__title page-header__title--l">{post.title}</h1>
-                <h2 className="page-header__subtitle"></h2>
+                <h2 className="page-header__subtitle">{post.subtitle}</h2>
                 <p className="page-header__info">
                     Posted by {post.author} on <time>{moment(post.date).format('DD. MMM YYYY')}</time>
                 </p>
