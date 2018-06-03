@@ -20,11 +20,11 @@ export const addPost = (post) => ({
 });
 
 export const startAddPost = (post) => {
-    const { title, content, author, date, published } = post;
+    const { title, subtitle, content, author, date, published } = post;
 
     return (dispatch, getState) => {
         const visibility = published ? 'public' : 'private';
-        return database.ref('posts/' + visibility).push({ title, content, author, date }).then((ref) => {
+        return database.ref('posts/' + visibility).push({ title, subtitle, content, author, date }).then((ref) => {
             dispatch(addPost({
                 id: ref.key,
                 published,
@@ -41,7 +41,7 @@ export const editPost = (id, updates) => ({
 });
 
 export const startEditPost = (id, post) => {
-    const { title, content, author, date, published } = post;
+    const { title, subtitle, content, author, date, published } = post;
 
     return (dispatch, getState) => {
         const prevPostPublished = getState().posts.find((post) => post.id === id).published;
@@ -52,7 +52,7 @@ export const startEditPost = (id, post) => {
             database.ref(`posts/${prevPostVisibility}/${id}`).remove();
         }
 
-        return database.ref(`posts/${visibility}/${id}`).set({ title, content, author, date }).then((ref) => {
+        return database.ref(`posts/${visibility}/${id}`).set({ title, subtitle, content, author, date }).then((ref) => {
             dispatch(editPost(
                 id,
                 post

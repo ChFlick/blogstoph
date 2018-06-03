@@ -5,9 +5,12 @@
         "posts": {
             "public": {
                 "$id": {
-                    ".validate": "newData.hasChildren(['title', 'content', 'date', 'author'])",
+                    ".validate": "newData.hasChildren(['title', 'subtitle', 'content', 'date', 'author'])",
                     "title": {
                         ".validate": "newData.isString() && newData.val().length > 0"
+                    },
+                    "subtitle": {
+                        ".validate": "newData.isString()"
                     },
                     "content": {
                         ".validate": "newData.isString() && newData.val().length > 0"
@@ -26,9 +29,12 @@
             },
             "private": {
                 "$id": {
-                    ".validate": "newData.hasChildren(['title', 'content', 'date', 'author'])",
+                    ".validate": "newData.hasChildren(['title', 'subtitle', 'content', 'date', 'author'])",
                     "title": {
                         ".validate": "newData.isString() && newData.val().length > 0"
+                    },
+                    "subtitle": {
+                        ".validate": "newData.isString()"
                     },
                     "content": {
                         ".validate": "newData.isString()"

@@ -1,7 +1,9 @@
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 
-import { startAddPost, addPost, startEditPost, editPost, startSetPosts, setPosts, startRemovePost, removePost } from '../../src/actions/posts';
+import {
+    startAddPost, addPost, startEditPost, editPost, startSetPosts, setPosts, startRemovePost, removePost
+} from '../../src/actions/posts';
 import { publishedPosts, privatePosts } from '../fixtures/posts';
 
 import database from '../../src/firebase/firebase';
@@ -10,13 +12,13 @@ const createMockStore = configureMockStore([thunk]);
 
 beforeEach((done) => {
     const publicPostData = {};
-    publishedPosts.forEach(({ id, title, content, author, date, published }) => {
-        publicPostData[id] = { title, content, author, date };
+    publishedPosts.forEach(({ id, title, subtitle, content, author, date, published }) => {
+        publicPostData[id] = { title, subtitle, content, author, date };
     });
 
     const privatePostData = {};
-    privatePosts.forEach(({ id, title, content, author, date, published }) => {
-        privatePostData[id] = { title, content, author, date };
+    privatePosts.forEach(({ id, title, subtitle, content, author, date, published }) => {
+        privatePostData[id] = { title, subtitle, content, author, date };
     });
 
     Promise.all([
@@ -27,6 +29,7 @@ beforeEach((done) => {
 test('addPost should generate an action object', () => {
     const post = {
         title: 'test',
+        subtitle: 'testB',
         content: 'testC',
         author: 'testA',
         date: 200,
@@ -43,6 +46,7 @@ test('startAddPost should call addPost public', (done) => {
     const store = createMockStore({});
     const post = {
         title: 'test',
+        subtitle: 'testB',
         content: 'testC',
         author: 'testA',
         date: 200,
@@ -68,6 +72,7 @@ test('startAddPost should call addPost private', (done) => {
     const store = createMockStore({});
     const post = {
         title: 'test',
+        subtitle: 'testB',
         content: 'testC',
         author: 'testA',
         date: 200,
@@ -142,6 +147,7 @@ test('editPost should generate an action object', () => {
     const postId = 'asdf';
     const post = {
         title: 'test',
+        subtitle: 'testB',
         content: 'testC',
         author: 'testA',
         date: 200,
@@ -160,6 +166,7 @@ describe('in startEditPost', () => {
         const id = publishedPosts[0].id;
         const post = {
             title: 'changed',
+            subtitle: 'changed',
             content: 'changed',
             author: 'changed',
             date: 123456,
@@ -180,6 +187,7 @@ describe('in startEditPost', () => {
         const id = privatePosts[0].id;
         const post = {
             title: 'changed',
+            subtitle: 'changed',
             content: 'changed',
             author: 'changed',
             date: 123456,
@@ -201,6 +209,7 @@ describe('in startEditPost', () => {
         const id = publishedPosts[0].id;
         const post = {
             title: 'changed',
+            subtitle: 'changed',
             content: 'changed',
             author: 'changed',
             date: 123456,
@@ -232,6 +241,7 @@ test('startRemovePost should call removePost with the post id', (done) => {
     const post = {
         id: 'test123',
         title: 'test',
+        subtitle: 'testB',
         content: 'testC',
         author: 'testA',
         date: 200,

@@ -25,9 +25,9 @@ class PostForm extends React.Component {
 
         const { title, subtitle, content, author, date, published } = this.state;
 
-        if (published && (!title || !subtitle || !content || !author || !date)) {
+        if (published && (!title || !content || !author || !date)) {
             this.setState(() => ({
-                error: 'Please provide all information when publishing a post.'
+                error: 'Please title, content, author and date when publishing a post.'
             }));
         } else if (!title) {
             this.setState(() => ({

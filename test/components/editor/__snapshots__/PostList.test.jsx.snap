@@ -21,6 +21,7 @@ exports[`post list should render correctly with posts 1`] = `
           "date": 0,
           "id": 1,
           "published": true,
+          "subtitle": "A great subtitle",
           "title": "Some Title",
         }
       }
@@ -34,6 +35,7 @@ exports[`post list should render correctly with posts 1`] = `
           "date": 1000,
           "id": 2,
           "published": true,
+          "subtitle": "A great subtitle",
           "title": "Some Title 2",
         }
       }
@@ -47,6 +49,7 @@ exports[`post list should render correctly with posts 1`] = `
           "date": 2000,
           "id": 3,
           "published": true,
+          "subtitle": "A great subtitle",
           "title": "Some Title 3",
         }
       }

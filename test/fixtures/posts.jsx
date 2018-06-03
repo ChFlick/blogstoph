@@ -1,6 +1,7 @@
 export const publishedPosts = [{
     id: 1,
     title: 'Some Title',
+    subtitle: 'A great subtitle',
     content: 'This is a Content of a Post...',
     date: 0,
     author: 'Author of 1',
@@ -9,6 +10,7 @@ export const publishedPosts = [{
 {
     id: 2,
     title: 'Some Title 2',
+    subtitle: 'A great subtitle',
     content: 'This is a second Content of a Post...',
     date: 1000,
     author: 'Author of 2',
@@ -17,6 +19,7 @@ export const publishedPosts = [{
 {
     id: 3,
     title: 'Some Title 3',
+    subtitle: 'A great subtitle',
     content: 'This is a third Content of a Post...',
     date: 2000,
     author: 'Author of 3',
@@ -26,6 +29,7 @@ export const publishedPosts = [{
 export const privatePosts = [{
     id: 11,
     title: 'Some Title',
+    subtitle: 'A great subtitle',
     content: 'This is a Content of a Post...',
     date: 0,
     author: 'Author of 1',
@@ -34,6 +38,7 @@ export const privatePosts = [{
 {
     id: 12,
     title: 'Some Title 2',
+    subtitle: 'A great subtitle',
     content: 'This is a second Content of a Post...',
     date: 1000,
     author: 'Author of 2',
