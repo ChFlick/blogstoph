@@ -10,6 +10,7 @@ class PostForm extends React.Component {
         const post = props.post || {};
         this.state = {
             title: post.title || '',
+            subtitle: post.subtitle || '',
             content: post.content || '',
             author: post.author || '',
             date: moment(post.date) || moment(),
@@ -22,9 +23,9 @@ class PostForm extends React.Component {
     onSubmit = (e) => {
         e.preventDefault();
 
-        const { title, content, author, date, published } = this.state;
+        const { title, subtitle, content, author, date, published } = this.state;
 
-        if (published && (!title || !content || !author || !date)) {
+        if (published && (!title || !subtitle || !content || !author || !date)) {
             this.setState(() => ({
                 error: 'Please provide all information when publishing a post.'
             }));
@@ -39,6 +40,7 @@ class PostForm extends React.Component {
 
             this.props.onSubmit({
                 title,
+                subtitle,
                 content,
                 author,
                 date: date.valueOf(),
@@ -53,6 +55,14 @@ class PostForm extends React.Component {
             title
         }));
     };
+
+    onSubtitleChange = (e) => {
+        const subtitle = e.target.value;
+        this.setState(() => ({
+            subtitle
+        }));
+    };
+
 
     onContentChange = (e) => {
         const content = e.target.value;
@@ -81,6 +91,7 @@ class PostForm extends React.Component {
 
     createTitleInput = () => (
         <input
+            id="title"
             type="text"
             placeholder="Title *"
             onChange={this.onTitleChange}
@@ -89,8 +100,20 @@ class PostForm extends React.Component {
         />
     );
 
+    createSubtitleInput = () => (
+        <input
+            id="subtitle"
+            type="text"
+            placeholder="Subtitle"
+            onChange={this.onSubtitleChange}
+            value={this.state.subtitle}
+            className="text-input"
+        />
+    );
+
     createContentInput = () => (
         <textarea
+            id="content"
             type="text"
             placeholder="Content"
             onChange={this.onContentChange}
@@ -101,6 +124,7 @@ class PostForm extends React.Component {
 
     createAuthorInput = () => (
         <input
+            id="author"
             type="text"
             placeholder="Author"
             onChange={this.onAuthorChange}
@@ -124,6 +148,7 @@ class PostForm extends React.Component {
         <div>
             <div className="pretty p-svg p-curve p-smooth">
                 <input
+                    id="published"
                     type="checkbox"
                     onChange={this.onPublishedChange}
                     checked={this.state.published}
@@ -162,6 +187,7 @@ class PostForm extends React.Component {
             <form className="form" onSubmit={this.onSubmit}>
                 {this.state.error && <p className="form__error">{this.state.error}</p>}
                 {this.createTitleInput()}
+                {this.createSubtitleInput()}
                 {this.createContentInput()}
                 <Markdown source={this.state.content} className="post" />
                 {this.createAuthorInput()}

@@ -7,13 +7,23 @@ exports[`renders the post form correctly 1`] = `
 >
   <input
     className="text-input"
+    id="title"
     onChange={[Function]}
     placeholder="Title *"
     type="text"
     value=""
   />
+  <input
+    className="text-input"
+    id="subtitle"
+    onChange={[Function]}
+    placeholder="Subtitle"
+    type="text"
+    value=""
+  />
   <textarea
     className="textarea"
+    id="content"
     onChange={[Function]}
     placeholder="Content"
     type="text"
@@ -33,6 +43,7 @@ exports[`renders the post form correctly 1`] = `
   />
   <input
     className="text-input"
+    id="author"
     onChange={[Function]}
     placeholder="Author"
     type="text"
@@ -129,6 +140,7 @@ exports[`renders the post form correctly 1`] = `
     >
       <input
         checked={false}
+        id="published"
         onChange={[Function]}
         type="checkbox"
       />

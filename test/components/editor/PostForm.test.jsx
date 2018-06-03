@@ -13,42 +13,53 @@ test('renders the post form correctly', () => {
     expect(wrapper).toMatchSnapshot();
 });
 
-test('should set the title', () => {
-    const wrapper = shallow(<PostForm />);
+describe('the post form', () => {
+    test('should set the title', () => {
+        const wrapper = shallow(<PostForm />);
 
-    wrapper.find('input').at(0).simulate('change', { target: { value: testText } });
-    expect(wrapper.state('title')).toEqual(testText);
+        wrapper.find('#title').simulate('change', { target: { value: testText } });
+        expect(wrapper.state('title')).toEqual(testText);
+    });
+
+    test('should set the subtitle', () => {
+        const wrapper = shallow(<PostForm />);
+
+        wrapper.find('#subtitle').simulate('change', { target: { value: testText } });
+        expect(wrapper.state('subtitle')).toEqual(testText);
+    });
+
+
+    test('should set the content', () => {
+        const wrapper = shallow(<PostForm />);
+
+        wrapper.find('#content').simulate('change', { target: { value: testText } });
+        expect(wrapper.state('content')).toEqual(testText);
+    });
+
+    test('should set the author', () => {
+        const wrapper = shallow(<PostForm />);
+
+        wrapper.find('#author').simulate('change', { target: { value: testText } });
+        expect(wrapper.state('author')).toEqual(testText);
+    });
+
+    test('should set the date', () => {
+        const newDate = moment(0);
+        const wrapper = shallow(<PostForm />);
+
+        wrapper.find(SingleDatePicker).prop('onDateChange')(newDate);
+        expect(wrapper.state('date')).toEqual(newDate);
+    });
+
+    test('should set published flag', () => {
+        const published = true;
+        const wrapper = shallow(<PostForm />);
+
+        wrapper.find('#published').simulate('change', { target: { checked: published } });
+        expect(wrapper.state('published')).toEqual(published);
+    });
 });
 
-test('should set the content', () => {
-    const wrapper = shallow(<PostForm />);
-
-    wrapper.find('textarea').simulate('change', { target: { value: testText } });
-    expect(wrapper.state('content')).toEqual(testText);
-});
-
-test('should set the author', () => {
-    const wrapper = shallow(<PostForm />);
-
-    wrapper.find('input').at(1).simulate('change', { target: { value: testText } });
-    expect(wrapper.state('author')).toEqual(testText);
-});
-
-test('should set the date', () => {
-    const newDate = moment(0);
-    const wrapper = shallow(<PostForm />);
-
-    wrapper.find(SingleDatePicker).prop('onDateChange')(newDate);
-    expect(wrapper.state('date')).toEqual(newDate);
-});
-
-test('should set published flag', () => {
-    const published = true;
-    const wrapper = shallow(<PostForm />);
-
-    wrapper.find('input').at(2).simulate('change', { target: { checked: published } });
-    expect(wrapper.state('published')).toEqual(published);
-});
 
 test('allows to set a post from outside', () => {
     const post = {
@@ -58,7 +69,7 @@ test('allows to set a post from outside', () => {
         published: true
     };
 
-    const wrapper = shallow(<PostForm post={post}/>);
+    const wrapper = shallow(<PostForm post={post} />);
 
     expect(wrapper.state('title')).toEqual(post.title);
     expect(wrapper.state('author')).toEqual(post.author);
@@ -117,6 +128,7 @@ describe('in onSubmit', () => {
 
         wrapper.setState({
             title: 'test',
+            subtitle: 'test',
             content: 'test',
             author: 'someone',
             published: true
@@ -133,6 +145,7 @@ describe('in onSubmit', () => {
 
         wrapper.setState({
             title: 'test',
+            subtitle: 'test',
             content: 'test',
             author: 'someone',
             published: true
