@@ -22,20 +22,22 @@ exports[`should render Header correctly when logged in 1`] = `
         </h1>
       </Link>
       <nav>
-        <Link
-          className="button button--link button--header"
-          replace={false}
-          to="/editor/dashboard"
-        >
-          Editor Area
-        </Link>
-        <a
-          className="button button--link button--header"
-          href=""
-          onClick={[Function]}
-        >
-          Logout
-        </a>
+        <React.Fragment>
+          <Link
+            className="button button--link button--header"
+            replace={false}
+            to="/editor/dashboard"
+          >
+            Editor Area
+          </Link>
+          <a
+            className="button button--link button--header"
+            href=""
+            onClick={[Function]}
+          >
+            Logout
+          </a>
+        </React.Fragment>
       </nav>
     </div>
   </div>
@@ -64,20 +66,22 @@ exports[`should render Header correctly when logged in in private area 1`] = `
         </h1>
       </Link>
       <nav>
-        <Link
-          className="button button--link button--header"
-          replace={false}
-          to="/dashboard"
-        >
-          Visitor Area
-        </Link>
-        <a
-          className="button button--link button--header"
-          href=""
-          onClick={[Function]}
-        >
-          Logout
-        </a>
+        <React.Fragment>
+          <Link
+            className="button button--link button--header"
+            replace={false}
+            to="/dashboard"
+          >
+            Visitor Area
+          </Link>
+          <a
+            className="button button--link button--header"
+            href=""
+            onClick={[Function]}
+          >
+            Logout
+          </a>
+        </React.Fragment>
       </nav>
     </div>
   </div>
@@ -105,13 +109,7 @@ exports[`should render Header correctly when logged out 1`] = `
           Blogstoph
         </h1>
       </Link>
-      <Link
-        className="button button--link"
-        replace={false}
-        to="/login"
-      >
-        Login
-      </Link>
+      <nav />
     </div>
   </div>
 </header>

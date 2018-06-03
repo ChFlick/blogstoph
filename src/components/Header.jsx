@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
@@ -52,14 +52,14 @@ export class Header extends React.Component {
                         <Link className="header__title" to="/dashboard">
                             <h1>Blogstoph</h1>
                         </Link>
-                        {this.props.isAuthenticated ? (
-                            <nav>
-                                {this.createAreaSwitchButton()}
-                                <a href="" className="button button--link button--header" onClick={this.props.startLogout}>Logout</a>
-                            </nav>
-                        ) : (
-                                <Link className="button button--link" to="/login">Login</Link>
+                        <nav>
+                            {this.props.isAuthenticated && (
+                                <Fragment>
+                                    {this.createAreaSwitchButton()}
+                                    <a href="" className="button button--link button--header" onClick={this.props.startLogout}>Logout</a>
+                                </Fragment>
                             )}
+                        </nav>
                     </div>
                 </div>
             </header>
