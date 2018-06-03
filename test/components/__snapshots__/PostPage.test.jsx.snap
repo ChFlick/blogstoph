@@ -15,7 +15,9 @@ exports[`should render one post page correctly 1`] = `
       </h1>
       <h2
         className="page-header__subtitle"
-      />
+      >
+        A great subtitle
+      </h2>
       <p
         className="page-header__info"
       >
