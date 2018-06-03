@@ -29,12 +29,13 @@ exports[`should render Header correctly when logged in 1`] = `
         >
           Editor Area
         </Link>
-        <button
+        <a
           className="button button--link button--header"
+          href=""
           onClick={[Function]}
         >
           Logout
-        </button>
+        </a>
       </nav>
     </div>
   </div>
@@ -70,12 +71,13 @@ exports[`should render Header correctly when logged in in private area 1`] = `
         >
           Visitor Area
         </Link>
-        <button
+        <a
           className="button button--link button--header"
+          href=""
           onClick={[Function]}
         >
           Logout
-        </button>
+        </a>
       </nav>
     </div>
   </div>

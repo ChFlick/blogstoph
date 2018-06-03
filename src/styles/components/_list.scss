@@ -23,7 +23,7 @@
     display: block;
     padding: $s-size;
     text-decoration: none;
-    transition: background .3s ease;
+    transition: background $transition-speed $transition-type;
 
     &:hover {
         background: $off-white;

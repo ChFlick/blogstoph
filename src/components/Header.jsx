@@ -55,7 +55,7 @@ export class Header extends React.Component {
                         {this.props.isAuthenticated ? (
                             <nav>
                                 {this.createAreaSwitchButton()}
-                                <button className="button button--link button--header" onClick={this.props.startLogout}>Logout</button>
+                                <a href="" className="button button--link button--header" onClick={this.props.startLogout}>Logout</a>
                             </nav>
                         ) : (
                                 <Link className="button button--link" to="/login">Login</Link>

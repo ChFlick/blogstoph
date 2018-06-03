@@ -1,4 +1,5 @@
 .header {
+    background: $grey;
     height: 7.4rem;
     left: 0;
     position: fixed;
@@ -25,8 +26,17 @@
 
 .header--fixed-top {
     color: $title-color !important;
-    transition: background-color 500ms, opacity 500ms;
+    transition: all $transition-speed $transition-type;
     position: absolute;
+
+    nav > a {
+        transition: all $transition-speed $transition-type;
+
+        &:hover {
+            color: white;
+            background-color: darken($grey, 15%);
+        }
+    }
 }
 
 .header--fixed {
@@ -36,12 +46,21 @@
     left: 0;
     opacity: 0.7;
     position: fixed;
-    transition: top 300ms;
+    transition: top $transition-speed $transition-type;
     top: -7.4rem;
     right: 0;
 }
 
 .header--visible {
     top: 0;
-    transition: top 300ms;
+    transition: top $transition-speed $transition-type;
+
+    nav > a {
+        transition: all $transition-speed $transition-type;
+
+        &:hover {
+            background-color: darken($off-white, 25%);
+            color: darken($text-dark, 25%);
+        }
+    }
 }
