@@ -7,3 +7,4 @@
 - [x] Only a short description or a summary of the description on the user dashboard (eg. subtitle)
 - [x] Links to the posts human-readable (eg. title in the link address /post/great-post-here)
 - [ ] Pagination in the dashboard, "Last Post / Next Post" functionality on the post page
+- [ ] User area / about page
