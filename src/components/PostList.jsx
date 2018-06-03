@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 
 import PostListItem from './PostListItem';
+import getVisiblePosts from '../selectors/posts';
 
 const isNotLastElement = (index, numberOfPosts) => {
     return index !== numberOfPosts - 1;
@@ -25,7 +26,7 @@ export const PostList = (props) => (
 );
 
 const mapStateToProps = (state) => ({
-    posts: (state.posts || []).filter((post = {}) => post.published === true)
+    posts: getVisiblePosts(state.posts, { published: true, sortBy: 'date' })
 });
 
 export default connect(mapStateToProps)(PostList);

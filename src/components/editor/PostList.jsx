@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 
 import PostListItem from './PostListItem';
+import getVisiblePosts from '../../selectors/posts';
 
 export const PostList = (props) => (
     <Fragment>
@@ -23,7 +24,7 @@ export const PostList = (props) => (
 );
 
 const mapStateToProps = (state) => ({
-    posts: state.posts || []
+    posts: getVisiblePosts(state.posts, { sortBy: 'date' })
 });
 
 export default connect(mapStateToProps)(PostList);
