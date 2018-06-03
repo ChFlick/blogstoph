@@ -1,0 +1,55 @@
+{
+    "rules": {
+        ".read": "auth != null && auth.uid === 'ADMIN_ID_HERE'",
+        ".write": "auth != null && auth.uid === 'ADMIN_ID_HERE'",
+        "posts": {
+            "public": {
+                "$id": {
+                    ".validate": "newData.hasChildren(['title', 'content', 'date', 'author'])",
+                    "title": {
+                        ".validate": "newData.isString() && newData.val().length > 0"
+                    },
+                    "content": {
+                        ".validate": "newData.isString() && newData.val().length > 0"
+                    },
+                    "author": {
+                        ".validate": "newData.isString() && newData.val().length > 0"
+                    },
+                    "date": {
+                        ".validate": "newData.isNumber()"
+                    },
+                    "$other": {
+                        ".validate": false
+                    }
+                },
+                ".read": true
+            },
+            "private": {
+                "$id": {
+                    ".validate": "newData.hasChildren(['title', 'content', 'date', 'author'])",
+                    "title": {
+                        ".validate": "newData.isString() && newData.val().length > 0"
+                    },
+                    "content": {
+                        ".validate": "newData.isString()"
+                    },
+                    "author": {
+                        ".validate": "newData.isString()"
+                    },
+                    "date": {
+                        ".validate": "newData.isNumber()"
+                    },
+                    "$other": {
+                        ".validate": false
+                    }
+                }
+            },
+            "$other": {
+                ".validate": false
+            }
+        },
+        "$other": {
+            ".validate": false
+        }
+    }
+}

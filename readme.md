@@ -15,7 +15,8 @@ If you have any ideas or comments feel free to contact me.
 
 ## Running the App
 
-You need a firebase database.
+You need a firebase database. The rules for the database can be found in the [database-rules.json](./database-rules.json).  For the test database ".read" and ".write" can be set to true.
+
 Put the data of your firebase db in .env.test for the tests /.env.development for the development server.
 
 You can run the development server with the dev-server command (eg `yarn run dev-server`).

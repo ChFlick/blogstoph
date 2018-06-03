@@ -8,5 +8,3 @@ public/dist/
 .env.development
 
 yarn-error.log
-
-dbRules.json
