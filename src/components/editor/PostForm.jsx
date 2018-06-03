@@ -141,6 +141,7 @@ class PostForm extends React.Component {
             onFocusChange={({ focused }) => this.setState({ dateFocused: focused })}
             numberOfMonths={1}
             displayFormat="DD.MM.YYYY"
+            isOutsideRange={() => false}
         />
     );
 
