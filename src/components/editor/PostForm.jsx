@@ -163,7 +163,7 @@ class PostForm extends React.Component {
                 {this.state.error && <p className="form__error">{this.state.error}</p>}
                 {this.createTitleInput()}
                 {this.createContentInput()}
-                <Markdown source={this.state.content} />
+                <Markdown source={this.state.content} className="post" />
                 {this.createAuthorInput()}
                 {this.createDatePicker()}
                 {this.createPublishedCheckbox()}

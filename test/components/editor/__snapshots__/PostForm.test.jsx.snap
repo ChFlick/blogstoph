@@ -21,6 +21,7 @@ exports[`renders the post form correctly 1`] = `
   />
   <ReactMarkdown
     astPlugins={Array []}
+    className="post"
     escapeHtml={true}
     plugins={Array []}
     rawSourcePos={false}

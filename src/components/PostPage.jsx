@@ -16,7 +16,7 @@ export const PostPage = ({ post }) => (
         </header>
         <Markdown
             source={post.content}
-            className="content-container"
+            className="content-container post"
         />
     </article>
 );

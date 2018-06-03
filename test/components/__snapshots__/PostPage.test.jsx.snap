@@ -30,7 +30,7 @@ exports[`should render one post page correctly 1`] = `
   </header>
   <ReactMarkdown
     astPlugins={Array []}
-    className="content-container"
+    className="content-container post"
     escapeHtml={true}
     plugins={Array []}
     rawSourcePos={false}
