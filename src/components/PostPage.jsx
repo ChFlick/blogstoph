@@ -3,6 +3,8 @@ import Markdown from 'react-markdown';
 import { connect } from 'react-redux';
 import moment from 'moment';
 
+import { getPostByIdOrTitle } from '../selectors/posts';
+
 export const PostPage = ({ post }) => (
     <article>
         <header className="page-header">
@@ -22,7 +24,7 @@ export const PostPage = ({ post }) => (
 );
 
 const mapStateToProps = (state, props) => ({
-    post: state.posts.find((post) => post.id === props.match.params.id)
+    post: getPostByIdOrTitle(state.posts, props.match.params.id)
 });
 
 export default connect(mapStateToProps, undefined)(PostPage);

@@ -4,7 +4,7 @@ import moment from 'moment';
 
 const PostListItem = (props) => (
     <section className="post-preview-item">
-        <Link className="post-preview-item__link" to={`post/${props.post.id}`} >
+        <Link className="post-preview-item__link" to={`post/${props.post.title.replace(/ /g, '-')}`} >
             <h1 className="post-preview-item__title">{props.post.title}</h1>
             <h2 className="post-preview-item__subtitle">{props.post.subtitle}</h2>
         </Link>

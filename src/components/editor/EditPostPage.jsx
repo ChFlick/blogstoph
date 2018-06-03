@@ -4,6 +4,7 @@ import Modal from 'react-modal';
 
 import { startEditPost, startRemovePost } from '../../actions/posts';
 import PostForm from './PostForm';
+import { getPostByIdOrTitle } from '../../selectors/posts';
 
 export class EditPostPage extends React.Component {
     state = {
@@ -83,7 +84,7 @@ export class EditPostPage extends React.Component {
 };
 
 const mapStateToProps = (state, props) => ({
-    post: state.posts.find((post) => post.id === props.match.params.id)
+    post: getPostByIdOrTitle(state.posts, props.match.params.id)
 });
 
 const mapDispatchToProps = (dispatch) => ({

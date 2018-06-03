@@ -5,7 +5,7 @@ exports[`should render the PostListItem correctly 1`] = `
   <Link
     className="list-item"
     replace={false}
-    to="post/1"
+    to="post/Some-Title"
   >
     <h1
       className="list-item__title"

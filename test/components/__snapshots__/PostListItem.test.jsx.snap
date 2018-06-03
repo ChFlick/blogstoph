@@ -7,7 +7,7 @@ exports[`post list should render correctly 1`] = `
   <Link
     className="post-preview-item__link"
     replace={false}
-    to="post/1"
+    to="post/Some-Title"
   >
     <h1
       className="post-preview-item__title"

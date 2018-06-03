@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 
 import PostListItem from './PostListItem';
-import getVisiblePosts from '../../selectors/posts';
+import { getVisiblePosts } from '../../selectors/posts';
 
 export const PostList = (props) => (
     <Fragment>
