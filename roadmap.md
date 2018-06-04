@@ -6,5 +6,12 @@
 - [ ] Pictures in Posts
 - [x] Only a short description or a summary of the description on the user dashboard (eg. subtitle)
 - [x] Links to the posts human-readable (eg. title in the link address /post/great-post-here)
-- [ ] Pagination in the dashboard, "Last Post / Next Post" functionality on the post page
+- [ ] Pagination in the dashboard & "Last Post / Next Post" functionality on the post page
 - [ ] User area / about page
+- [ ] Search function
+- [ ] (Better) Post preview function (eg. click to show preview, or show it somewhere else)
+- [ ] "Meta stuff"
+  - [ ] Better 404 Site
+  - [ ] Better Favicon
+  - [ ] robots.txt, humans.txt, sitemap.xml (react-router-sitemap), impressum
+  - [ ] SEO things like page titles, meta description and keywords etc.
