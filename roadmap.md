@@ -11,7 +11,7 @@
 - [ ] Search function
 - [ ] (Better) Post preview function (eg. click to show preview, or show it somewhere else)
 - [ ] "Meta stuff"
-  - [ ] Better 404 Site
+  - [x] Better 404 Site
   - [ ] Better Favicon
   - [ ] robots.txt, humans.txt, sitemap.xml (react-router-sitemap), impressum
   - [ ] SEO things like page titles, meta description and keywords etc.
