@@ -1,7 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render the not found page correctly 1`] = `
-<div>
-  404 not found
-</div>
+<React.Fragment>
+  <header
+    className="page-header"
+  >
+    <h1>
+      404 Not Found
+    </h1>
+  </header>
+  <section
+    className="content-container align-center"
+  >
+    <p>
+      The page you were looking for could not be found.
+    </p>
+    <Link
+      replace={false}
+      to="/"
+    >
+      Click here to go back to the home page
+    </Link>
+  </section>
+</React.Fragment>
 `;

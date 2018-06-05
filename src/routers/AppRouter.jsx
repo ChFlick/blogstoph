@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router, Route, Switch } from 'react-router-dom';
+import { Router, Switch } from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory';
 
 import AddPostPage from '../components/editor/AddPostPage';
@@ -26,7 +26,8 @@ const AppRouter = () => (
             <PrivateRoute path="/editor/dashboard" component={EditorDashboardPage} />
             <PrivateRoute path="/editor/add" component={AddPostPage} />
             <PrivateRoute path="/editor/post/:id" component={EditPostPage} />
-            <Route component={NotFoundPage} />
+
+            <PublicRoute component={NotFoundPage} />
         </Switch>
     </Router>
 );
