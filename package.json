@@ -36,7 +36,7 @@
     "numeral": "^2.0.6",
     "pretty-checkbox": "^3.0.3",
     "react": "^16.0.0",
-    "react-dates": "^17.0.0",
+    "react-dates": "^18.0.0",
     "react-dom": "^16.0.0",
     "react-markdown": "^3.3.2",
     "react-modal": "^3.3.1",
