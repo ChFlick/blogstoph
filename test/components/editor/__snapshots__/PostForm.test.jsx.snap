@@ -66,6 +66,7 @@ exports[`renders the post form correctly 1`] = `
     focused={false}
     hideKeyboardShortcutsPanel={false}
     horizontalMargin={0}
+    horizontalMonthPadding={13}
     id="date"
     initialVisibleMonth={null}
     inputIconPosition="before"
