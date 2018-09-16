@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`post list should render correctly with posts 1`] = `
-<React.Fragment>
+<Fragment>
   <div
     className="list-header"
   >
@@ -55,11 +55,11 @@ exports[`post list should render correctly with posts 1`] = `
       }
     />
   </div>
-</React.Fragment>
+</Fragment>
 `;
 
 exports[`post list should render correctly without posts 1`] = `
-<React.Fragment>
+<Fragment>
   <div
     className="list-header"
   >
@@ -76,5 +76,5 @@ exports[`post list should render correctly without posts 1`] = `
       There are no posts available
     </p>
   </div>
-</React.Fragment>
+</Fragment>
 `;

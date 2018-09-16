@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render the not found page correctly 1`] = `
-<React.Fragment>
+<Fragment>
   <header
     className="page-header"
   >
@@ -22,5 +22,5 @@ exports[`should render the not found page correctly 1`] = `
       Click here to go back to the home page
     </Link>
   </section>
-</React.Fragment>
+</Fragment>
 `;

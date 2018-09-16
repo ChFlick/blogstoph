@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render the add post page correctly 1`] = `
-<React.Fragment>
+<Fragment>
   <header
     className="page-header"
   >
@@ -63,5 +63,5 @@ exports[`should render the add post page correctly 1`] = `
       </button>
     </section>
   </Modal>
-</React.Fragment>
+</Fragment>
 `;

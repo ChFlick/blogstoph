@@ -4,63 +4,51 @@ exports[`post list should render correctly with posts 1`] = `
 <div
   className="content-container"
 >
-  <React.Fragment
-    key="1"
-  >
-    <PostListItem
-      post={
-        Object {
-          "author": "Author of 1",
-          "content": "This is a Content of a Post...",
-          "date": 0,
-          "id": 1,
-          "published": true,
-          "subtitle": "A great subtitle",
-          "title": "Some Title",
-        }
+  <PostListItem
+    post={
+      Object {
+        "author": "Author of 1",
+        "content": "This is a Content of a Post...",
+        "date": 0,
+        "id": 1,
+        "published": true,
+        "subtitle": "A great subtitle",
+        "title": "Some Title",
       }
-    />
-    <hr
-      className="bar--light-grey"
-    />
-  </React.Fragment>
-  <React.Fragment
-    key="2"
-  >
-    <PostListItem
-      post={
-        Object {
-          "author": "Author of 2",
-          "content": "This is a second Content of a Post...",
-          "date": 1000,
-          "id": 2,
-          "published": true,
-          "subtitle": "A great subtitle",
-          "title": "Some Title 2",
-        }
+    }
+  />
+  <hr
+    className="bar--light-grey"
+  />
+  <PostListItem
+    post={
+      Object {
+        "author": "Author of 2",
+        "content": "This is a second Content of a Post...",
+        "date": 1000,
+        "id": 2,
+        "published": true,
+        "subtitle": "A great subtitle",
+        "title": "Some Title 2",
       }
-    />
-    <hr
-      className="bar--light-grey"
-    />
-  </React.Fragment>
-  <React.Fragment
-    key="3"
-  >
-    <PostListItem
-      post={
-        Object {
-          "author": "Author of 3",
-          "content": "This is a third Content of a Post...",
-          "date": 2000,
-          "id": 3,
-          "published": true,
-          "subtitle": "A great subtitle",
-          "title": "Some Title 3",
-        }
+    }
+  />
+  <hr
+    className="bar--light-grey"
+  />
+  <PostListItem
+    post={
+      Object {
+        "author": "Author of 3",
+        "content": "This is a third Content of a Post...",
+        "date": 2000,
+        "id": 3,
+        "published": true,
+        "subtitle": "A great subtitle",
+        "title": "Some Title 3",
       }
-    />
-  </React.Fragment>
+    }
+  />
 </div>
 `;
 
