@@ -39,6 +39,7 @@ exports[`should render the add post page correctly 1`] = `
     onRequestClose={[Function]}
     parentSelector={[Function]}
     portalClassName="ReactModalPortal"
+    role="dialog"
     shouldCloseOnEsc={true}
     shouldCloseOnOverlayClick={true}
     shouldFocusAfterRender={true}
