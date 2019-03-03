@@ -5,7 +5,7 @@
   "author": "Christoph Flick",
   "license": "MIT",
   "engines": {
-    "node": "10.10"
+    "node": "11"
   },
   "scripts": {
     "build:dev": "webpack",
