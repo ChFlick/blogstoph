@@ -6851,10 +6851,10 @@ react-addons-shallow-compare@^15.6.2:
     fbjs "^0.8.4"
     object-assign "^4.1.0"
 
-react-dates@19.0.2:
-  version "19.0.2"
-  resolved "https://registry.yarnpkg.com/react-dates/-/react-dates-19.0.2.tgz#959e8256aeb23207221be5b610ade89d18d23726"
-  integrity sha512-r1aipdSK4kRXfb6FYCS6jkIDafjhB0jgH2DVlDNb2mZdl9TbNLKSEITA8g0zIJFCyG8D297swmdUhlGW0ecU7g==
+react-dates@20.1.0:
+  version "20.1.0"
+  resolved "https://registry.yarnpkg.com/react-dates/-/react-dates-20.1.0.tgz#bc2bb04ec8af4ee124c588c1494f82e711f2af53"
+  integrity sha512-GHUb7UHzsomYLUWxafVgMBnwHPzkP6dcPk0u84ODf1USiU819eLqFu7HMRCFQsvSBSSl41dTRT8dIUs+zC4Q6Q==
   dependencies:
     airbnb-prop-types "^2.10.0"
     consolidated-events "^1.1.1 || ^2.0.0"
